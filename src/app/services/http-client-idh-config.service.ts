@@ -6,6 +6,7 @@ import { IdhConfigService } from './idh-config.service';
 import { SubArea } from '../models/subarea';
 import { IdhConfig } from '../models/idhconfigresult';
 import { Area } from '../models/area';
+import { BreadCrumbMenu } from '../models/BreadCrumbMenu';
  
 const cudOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 @Injectable({
@@ -29,7 +30,12 @@ export class HttpClientIdhConfigService extends IdhConfigService {
       catchError(this.handleError)
     );
   }
-   
+
+  getBreadcrumbMenu(): Observable<BreadCrumbMenu[]> {
+    return this.http.get<BreadCrumbMenu[]>(this.breadCrumbMenuUrl).pipe(
+      catchError(this.handleError)
+    );
+  }
   getIdhConfigResult(locid :any): Observable<IdhConfig[]> {
     // add safe, encoded search parameter if term is present
     const options =

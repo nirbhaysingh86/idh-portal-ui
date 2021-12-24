@@ -7,8 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
-true}">
+          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
             <a class="nav-link" [routerLink]="['/home']">IDH Management</a>
           </li>
         </ul>
@@ -18,13 +17,11 @@ true}">
   <div class="row header-row">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a routerLink="/search">Search</a></li>
-        <li class="breadcrumb-item"><a routerLink="/result">Results</a></li>
-        <li class="breadcrumb-item active"><a routerLink="/home">Detail</a></li>
+        <li class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList "><a  [ngClass]="[breadmenu.routerText === selectedrouterText ? 'active-breadmenu' : '']" (click)="getSelectedMenu(breadmenu.routerText)" routerLink="{{breadmenu.routerLink}}">{{breadmenu.routerText}}</a></li>
       </ol>
     </nav>
     <span>CONFIGURATION</span>
-    <h1>Search</h1>
+    <h1>{{selectedrouterText}}</h1>
     <div class="col-sm-8">
       Find specific configuration or create a  <a mat-button routerLink="." class="new-config-link" appearance="outline">NEW CONFIGURATION</a>
     </div>

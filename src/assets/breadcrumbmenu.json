@@ -7,10 +7,6 @@
   {
     "routerText": "Results",
     "routerLink": "/result"
-  },
-  {
-    "routerText": "Detail",
-    "routerLink": "/detail"
   } 
 
 ]
