@@ -6,6 +6,7 @@ import { IdhConfig } from '../models/idhconfigresult';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 import { MatDialog } from '@angular/material/dialog';
 import { RecommendedActionsDialog } from '../recommended-actions-dialog/recommended-actions-dialog.component';
+import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-idh-config-result',
@@ -15,28 +16,43 @@ import { RecommendedActionsDialog } from '../recommended-actions-dialog/recommen
 export class IdhConfigResult {
   searchTerm: any;
   pageEvent: any;
-  pageSize = 10;
+  pageSize = 25;
   idhConfigResults: any[] = [];
-  displayedColumns: string[] = ['subjectAreaName', 'subjectSubAreaName', 'sourceSystemCode', 'objectName', 'resourceName', 'user', 'lastUpdatedDate'];
-  @Input() discrepancylocDetail: any;
+  displayedColumns: string[] = ['select','subjectAreaName', 'subjectSubAreaName', 'sourceSystemCode', 'objectName', 'resourceName', 'user', 'lastUpdatedDate','viewdetails'];
   @ViewChild(MatPaginator) paginator: any;
   dataSource: MatTableDataSource<IdhConfig> = new MatTableDataSource();
   @ViewChild(MatSort, { static: false }) sort: any;
+  selection = new SelectionModel<IdhConfig>(true, []);
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog) {
 
+  }
+   
+  ngOnInit() {
+    this.getIdhConfigResult();
   }
 
   //table  will display based on location selection
   ngOnChanges(changes: any) {
     console.log(changes);
     if (changes && changes.discrepancylocDetail) {
-      
+
     }
   }
 
-  ngOnInit() {
-    this.getIdhConfigResult();
+  /** The label for the checkbox on the passed row */
+  checkboxLabel(row?: IdhConfig): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${1 + 1}`;
+  }
+
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
   }
 
   getIdhConfigResult() {
@@ -64,6 +80,11 @@ export class IdhConfigResult {
 
   onMatSortChange() {
     this.dataSource.sort = this.sort;
+  }
+
+  getTooltip(column:any, row:any) {
+    //return column + ' - ' + row[column];
+    return   row[column];
   }
 
 }

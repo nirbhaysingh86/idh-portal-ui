@@ -1,75 +1,91 @@
 <div class="card card-text-size" >
-
   <div class="card-body">
-    <div  >
-      <div class="loc-name">
-        <!--{{this.discrepancylocDetail.locname}}-->
+    <div>
+      <div class="search-results">
+        Search Results
       </div>
-      <div class="mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
-
-          <!-- subjectAreaName Column -->
-          <ng-container matColumnDef="subjectAreaName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.subjectAreaName}} </mat-cell>
-          </ng-container>
-
-          <!-- subjectSubAreaName Column -->
-          <ng-container matColumnDef="subjectSubAreaName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> SubArea </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.subjectSubAreaName}}</mat-cell>
-          </ng-container>
-
-          <!-- sourceSystemCode Column -->
-          <ng-container matColumnDef="sourceSystemCode">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> System Code </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.sourceSystemCode}} </mat-cell>
-          </ng-container>
-
-          <!-- objectName Column -->
-          <ng-container matColumnDef="objectName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Object Code </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.objectName}} </mat-cell>
-          </ng-container>
-          <!-- resourceName Column -->
-          <ng-container matColumnDef="resourceName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Resource Name </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.resourceName}} </mat-cell>
-          </ng-container>
-          <!-- user Column -->
-          <ng-container matColumnDef="user">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>User </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.user}} </mat-cell>
-          </ng-container>
-          <!-- lastUpdatedDate Column -->
-          <ng-container matColumnDef="lastUpdatedDate">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.lastUpdatedDate}} </mat-cell>
-          </ng-container>
-          <!-- Action Column -->
-          <!--<ng-container matColumnDef="action">
-    <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-    <mat-cell *matCellDef="let row">
-      <img src="assets/question-mark-inside-a-circle-svgrepo-com.svg" alt="Open" class="action-image" (click)="showPopUp(row)" />
-
-    </mat-cell>
-  </ng-container>-->
-          <!-- Row shown when there is no matching data. -->
-          <tr class="mat-row" *matNoDataRow>
-            <td class="mat-cell" colspan="4">No data matching the filter </td>
-          </tr>
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-        </table>
-        <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[10]" (page)="pageEvent = $event"
-                       aria-label="Select page">
-        </mat-paginator>
-      </div>
+      <div>{{idhConfigResults.length==1?idhConfigResults.length+' Result':idhConfigResults.length+' Results'}} </div>
     </div>
   </div>
 </div>
+<div class="table-padding">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <mat-header-cell *matHeaderCellDef>
+          <!--<mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                    [aria-label]="checkboxLabel()">
+      </mat-checkbox>-->
+        </mat-header-cell>
 
+        <mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"
+                        [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+        </mat-cell>
+      </ng-container>
+      <!-- subjectAreaName Column -->
+      <ng-container matColumnDef="subjectAreaName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.subjectAreaName}}"> {{row.subjectAreaName}} </mat-cell>
+      </ng-container>
 
+      <!-- subjectSubAreaName Column -->
+      <ng-container matColumnDef="subjectSubAreaName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> SubArea </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.subjectSubAreaName}}"> {{row.subjectSubAreaName}}</mat-cell>
+      </ng-container>
 
+      <!-- sourceSystemCode Column -->
+      <ng-container matColumnDef="sourceSystemCode">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> System Code </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.sourceSystemCode}}"> {{row.sourceSystemCode}} </mat-cell>
+      </ng-container>
+
+      <!-- objectName Column -->
+      <ng-container matColumnDef="objectName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Object Code </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.objectName}}"> {{row.objectName}} </mat-cell>
+      </ng-container>
+      <!-- resourceName Column -->
+      <ng-container matColumnDef="resourceName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Resource Name </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.resourceName}}"> {{row.resourceName}} </mat-cell>
+      </ng-container>
+      <!-- user Column -->
+      <ng-container matColumnDef="user">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>User </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.user}}"> {{row.user}} </mat-cell>
+      </ng-container>
+      <!-- lastUpdatedDate Column -->
+      <ng-container matColumnDef="lastUpdatedDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated </mat-header-cell>
+        <mat-cell *matCellDef="let row" matTooltip="{{row.lastUpdatedDate}}"> {{row.lastUpdatedDate}} </mat-cell>
+      </ng-container>
+      <!-- view details Column -->
+      <ng-container matColumnDef="viewdetails">
+        <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          
+          <a     class="view-details"  (click)="showPopUp(row)">view details</a>
+        </mat-cell>
+      </ng-container>
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter </td>
+      </tr>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+    </table>
+    <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5,10,25,50,100]" (page)="pageEvent = $event"
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>
 
