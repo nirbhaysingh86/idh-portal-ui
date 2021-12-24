@@ -16,14 +16,14 @@ export class IdhConfigResult {
   searchTerm: any;
   pageEvent: any;
   pageSize = 10;
-  discrepancyLocationList: any[] = [];
-  displayedColumns: string[] = ['sourceSystem', 'targetSystem', 'store', 'Item', 'sourceCount', 'targetCount', 'action'];
+  idhConfigResults: any[] = [];
+  displayedColumns: string[] = ['subjectAreaName', 'subjectSubAreaName', 'sourceSystemCode', 'objectName', 'resourceName', 'user', 'lastUpdatedDate'];
   @Input() discrepancylocDetail: any;
   @ViewChild(MatPaginator) paginator: any;
   dataSource: MatTableDataSource<IdhConfig> = new MatTableDataSource();
   @ViewChild(MatSort, { static: false }) sort: any;
 
-  constructor(private reconciliation: HttpClientIdhConfigService, public dialog: MatDialog) {
+  constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog) {
 
   }
 
@@ -31,21 +31,25 @@ export class IdhConfigResult {
   ngOnChanges(changes: any) {
     console.log(changes);
     if (changes && changes.discrepancylocDetail) {
-      this.reconciliation.getIdhConfigResult(changes.discrepancylocDetail.currentValue.locId).subscribe((data: any) => {
-        data = data.filter((el: any) => {
-          return el.locid == this.discrepancylocDetail.locId;
-        })
-        console.log(data);
-        this.discrepancyLocationList = data;
-
-        this.dataSource = new MatTableDataSource(data);
-        this.dataSource.paginator = this.paginator;
-      })
+      
     }
   }
 
   ngOnInit() {
+    this.getIdhConfigResult();
+  }
 
+  getIdhConfigResult() {
+    this.idhConfigService.getIdhConfigResult("").subscribe((data: any) => {
+      //data = data.filter((el: any) => {
+      //  return el.locid == this.discrepancylocDetail.locId;
+      //})
+      console.log(data);
+      this.idhConfigResults = data;
+
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    })
   }
 
   showPopUp(row: any) {

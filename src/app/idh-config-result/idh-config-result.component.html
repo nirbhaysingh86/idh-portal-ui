@@ -3,52 +3,57 @@
   <div class="card-body">
     <div class="chartjs-container">
       <div class="loc-name">
-        {{this.discrepancylocDetail.locname}}
+        <!--{{this.discrepancylocDetail.locname}}-->
       </div>
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
 
-          <!-- sourceSystem Column -->
-          <ng-container matColumnDef="sourceSystem">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Source System </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.sourceSystem}} </mat-cell>
+          <!-- subjectAreaName Column -->
+          <ng-container matColumnDef="subjectAreaName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.subjectAreaName}} </mat-cell>
           </ng-container>
 
-          <!-- targetSystem Column -->
-          <ng-container matColumnDef="targetSystem">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Target System </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.targetSystem}}</mat-cell>
+          <!-- subjectSubAreaName Column -->
+          <ng-container matColumnDef="subjectSubAreaName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> SubArea </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.subjectSubAreaName}}</mat-cell>
           </ng-container>
 
-          <!-- store Column -->
-          <ng-container matColumnDef="store">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Store </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.store}} </mat-cell>
+          <!-- sourceSystemCode Column -->
+          <ng-container matColumnDef="sourceSystemCode">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> System Code </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.sourceSystemCode}} </mat-cell>
           </ng-container>
 
-          <!-- store Column -->
-          <ng-container matColumnDef="Item">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Item </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.Item}} </mat-cell>
+          <!-- objectName Column -->
+          <ng-container matColumnDef="objectName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Object Code </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.objectName}} </mat-cell>
           </ng-container>
-          <!-- store Column -->
-          <ng-container matColumnDef="sourceCount">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Source Count </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.sourceCount}} </mat-cell>
+          <!-- resourceName Column -->
+          <ng-container matColumnDef="resourceName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Resource Name </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.resourceName}} </mat-cell>
           </ng-container>
-          <!-- store Column -->
-          <ng-container matColumnDef="targetCount">
-            <mat-header-cell *matHeaderCellDef mat-sort-header>Target Count </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{row.targetCount}} </mat-cell>
+          <!-- user Column -->
+          <ng-container matColumnDef="user">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>User </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.user}} </mat-cell>
+          </ng-container>
+          <!-- lastUpdatedDate Column -->
+          <ng-container matColumnDef="lastUpdatedDate">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.lastUpdatedDate}} </mat-cell>
           </ng-container>
           <!-- Action Column -->
-          <ng-container matColumnDef="action">
-            <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-            <mat-cell *matCellDef="let row">
-              <img src="assets/question-mark-inside-a-circle-svgrepo-com.svg" alt="Open" class="action-image" (click)="showPopUp(row)" />
-               
-            </mat-cell>
-          </ng-container>
+          <!--<ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <img src="assets/question-mark-inside-a-circle-svgrepo-com.svg" alt="Open" class="action-image" (click)="showPopUp(row)" />
+
+    </mat-cell>
+  </ng-container>-->
           <!-- Row shown when there is no matching data. -->
           <tr class="mat-row" *matNoDataRow>
             <td class="mat-cell" colspan="4">No data matching the filter </td>

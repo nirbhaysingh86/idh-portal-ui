@@ -1,3 +1,3 @@
 export class IdhConfig {
-  constructor(public subjectAreaName = '', public subAreaName = '', public systemCode = '', public objectCode = '', public resourceName = '', public user = '', public lastUpdated = '') { }
+  constructor(public subjectAreaName = '', public subjectSubAreaName = '', public sourceSystemCode = '', public objectName = '', public resourceName = '', public user = '', public lastUpdated = '') { }
 }

@@ -2,21 +2,21 @@
   {
 
     "subjectAreaName": "Lorem",
-    "subAreaName": "Ipsum",
-    "systemCode": "Dolor",
-    "Item": "Dolor",
-    "objectCode": "Dolor",
+    "subjectSubAreaName": "Ipsum",
+    "sourceSystemCode": "Dolor",
+    "objectName": "Dolor",
     "resourceName": "Dolor",
-    "user": "IAH111"
+    "user": "IAH111",
+    "lastUpdatedDate": "2021-12-24"
   },
   {
     "subjectAreaName": "Lorem",
-    "subAreaName": "Ipsum",
-    "systemCode": "Dolor",
-    "Item": "Dolor",
-    "objectCode": "Dolor",
+    "subjectSubAreaName": "Ipsum",
+    "sourceSystemCode": "Dolor",
+    "objectName": "Dolor",
     "resourceName": "Dolor",
-    "user": "IAH000"
+    "user": "IAH000",
+    "lastUpdatedDate": "2021-12-24"
   } 
 
 ]
