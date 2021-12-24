@@ -2,17 +2,17 @@ import { Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { DiscrepancyLocationDetails } from '../models/discrepancylocationdetails';
+import { IdhConfig } from '../models/idhconfigresult';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 import { MatDialog } from '@angular/material/dialog';
 import { RecommendedActionsDialog } from '../recommended-actions-dialog/recommended-actions-dialog.component';
 
 @Component({
-  selector: 'app-discrepancy-location-detail',
-  templateUrl: './discrepancy-location-detail.component.html',
-  styleUrls: ['./discrepancy-location-detail.component.scss']
+  selector: 'app-idh-config-result',
+  templateUrl: './idh-config-result.component.html',
+  styleUrls: ['./idh-config-result.component.scss']
 })
-export class DiscrepancyLocationDetail {
+export class IdhConfigResult {
   searchTerm: any;
   pageEvent: any;
   pageSize = 10;
@@ -20,7 +20,7 @@ export class DiscrepancyLocationDetail {
   displayedColumns: string[] = ['sourceSystem', 'targetSystem', 'store', 'Item', 'sourceCount', 'targetCount', 'action'];
   @Input() discrepancylocDetail: any;
   @ViewChild(MatPaginator) paginator: any;
-  dataSource: MatTableDataSource<DiscrepancyLocationDetails> = new MatTableDataSource();
+  dataSource: MatTableDataSource<IdhConfig> = new MatTableDataSource();
   @ViewChild(MatSort, { static: false }) sort: any;
 
   constructor(private reconciliation: HttpClientIdhConfigService, public dialog: MatDialog) {
@@ -31,7 +31,7 @@ export class DiscrepancyLocationDetail {
   ngOnChanges(changes: any) {
     console.log(changes);
     if (changes && changes.discrepancylocDetail) {
-      this.reconciliation.getDiscrepancyLocationDetails(changes.discrepancylocDetail.currentValue.locId).subscribe((data: any) => {
+      this.reconciliation.getIdhConfigResult(changes.discrepancylocDetail.currentValue.locId).subscribe((data: any) => {
         data = data.filter((el: any) => {
           return el.locid == this.discrepancylocDetail.locId;
         })

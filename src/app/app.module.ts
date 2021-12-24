@@ -11,30 +11,21 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeIdhComponent } from './home-idh/home-idh.component';
-import { LocationComponent } from './location/location.component';
-import { DepartmentComponent } from './department/department.component';
 import { RecommendedActionsDialog } from './recommended-actions-dialog/recommended-actions-dialog.component';
-import { ItemsComponent } from './items/items.component';
-import { DiscrepancyLocationDetail } from './discrepancy-by-location-detail/discrepancy-location-detail.component';
+import { IdhConfigResult } from './idh-config-result/idh-config-result.component';
 import { ChartsModule } from 'ng2-charts';
-import { LineChartComponent } from './line-chart/line-chart.component';
-import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
+ 
 import { IdhSearchComponent } from './idh-search/idh-search.component';
-import { PieChartComponent } from './pie-chart/pie-chart.component';
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeIdhComponent,
-    LocationComponent,
-    DepartmentComponent,
-    ItemsComponent,
-    DiscrepancyLocationDetail,
-    LineChartComponent,
-    DoughnutChartComponent,
+    IdhConfigResult,
     IdhSearchComponent,
-    PieChartComponent,
+   
     RecommendedActionsDialog,
   ],
   imports: [
@@ -49,6 +40,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeIdhComponent },
+      { path: 'search', component: IdhSearchComponent },
+      { path: 'result', component: IdhConfigResult },
     ]), BrowserAnimationsModule
   ], 
   providers: [],

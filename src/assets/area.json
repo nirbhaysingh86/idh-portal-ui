@@ -1,19 +1,20 @@
 [
   {
     "areaId": 1,
-    "areaName": "Richfield" 
+    "subjectAreaName": "Lorem"
+     
   },
   {
     "areaId": 2,
-    "areaName": "Potland"
+    "subjectAreaName": "Mumbai"
   },
   {
     "areaId": 3,
-    "areaName": "Seward"
+    "subjectAreaName": "Patna"
   },
   {
     "areaId": 4,
-    "areaName": "Jordan"
+    "subjectAreaName": "Jordan"
   }
 
 ]

@@ -1,0 +1,77 @@
+[
+  {
+    "subAareaId": 1,
+    "areaId": 1,
+    "subjectSubAreaName": "Ipsum"
+  },
+  {
+    "subAareaId": 2,
+    "areaId": 1,
+    "subjectSubAreaName": "Indira Nagar"
+  },
+  {
+    "subAareaId": 3,
+    "areaId": 1,
+    "subjectSubAreaName": "Jayanagar"
+  },
+  {
+    "subAareaId": 4,
+    "areaId": 1,
+    "subjectSubAreaName": "Koramangala"
+  },
+  {
+    "subAareaId": 5,
+    "areaId": 1,
+    "subjectSubAreaName": "Malleshwaram"
+  },
+  {
+    "subAareaId": 6,
+    "areaId": 2,
+    "subjectSubAreaName": "Bandra West"
+  },
+  {
+    "subAareaId": 7,
+    "areaId": 2,
+    "subjectSubAreaName": "Kandivali West"
+  },
+  {
+    "subAareaId": 8,
+    "areaId": 2,
+    "subjectSubAreaName": "Colaba"
+  },
+  {
+    "subAareaId": 9,
+    "areaId": 2,
+    "subjectSubAreaName": "Kurla East"
+  },
+  {
+    "subAareaId": 10,
+    "areaId": 2,
+    "subjectSubAreaName": "Juhu"
+  },
+  {
+    "subAareaId": 11,
+    "areaId": 3,
+    "subjectSubAreaName": "Patna Sadar"
+  },
+  {
+    "subAareaId": 12,
+    "areaId": 3,
+    "subjectSubAreaName": "Danapur"
+  },
+  {
+    "subAareaId": 13,
+    "areaId": 3,
+    "subjectSubAreaName": "Masaurhi"
+  },
+  {
+    "subAareaId": 14,
+    "areaId": 3,
+    "subjectSubAreaName": "Kankarbagh"
+  },
+  {
+    "subAareaId": 15,
+    "areaId": 3,
+    "subjectSubAreaName": "Ashiyana"
+  }
+]

@@ -3,14 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\department",
-    "\\src\\app\\home-reconciliation",
-    "\\src\\app\\items",
-    "\\src\\app\\line-chart",
-    "\\src\\app\\location",
+    "\\src\\app\\home-idh",
+    "\\src\\app\\models",
     "\\src\\app\\nav-menu",
+    "\\src\\app\\services",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\line-chart\\line-chart.component.scss",
+  "SelectedNode": "\\src\\app\\home-idh\\home-idh.component.scss",
   "PreviewInSolutionExplorer": false
 }

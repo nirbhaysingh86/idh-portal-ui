@@ -1,0 +1,16 @@
+[
+  {
+    "routerText": "Search",
+    "routerLink": "/home"
+
+  },
+  {
+    "routerText": "Results",
+    "routerLink": "/result"
+  },
+  {
+    "routerText": "Detail",
+    "routerLink": "/detail"
+  } 
+
+]
