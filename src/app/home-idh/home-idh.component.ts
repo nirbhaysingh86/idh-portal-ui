@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { HttpClientReconciliationService } from '../services/http-client-reconciliation.service';
 @Component({
   selector: 'app-home-reconciliation',
-  templateUrl: './home-reconciliation.component.html',
-  styleUrls: ['./home-reconciliation.component.scss']
+  templateUrl: './home-idh.component.html',
+  styleUrls: ['./home-idh.component.scss']
 })
-export class HomeReconciliationfComponent {
+export class HomeIdhComponent {
   locationdata: any;
   departmentdata: any;
   locationlabels: any;
@@ -18,15 +18,7 @@ export class HomeReconciliationfComponent {
   selectedWeek: any;
   discrepancylocDetail = '';
 
-  selected: string | undefined;
-
-  currencies = [
-    { value: 'us', text: 'U.S. Dollar $' },
-    { value: 'euro', text: 'Euro €' },
-    { value: 'yen', text: 'Japanese Yen ¥' },
-    { value: 'pound', text: 'Pounds £' },
-    { value: 'inr', text: 'Indian Rupee ₹' }
-  ];
+   
   constructor(private reconciliation: HttpClientReconciliationService) {
 
   }

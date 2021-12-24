@@ -1,0 +1,17 @@
+
+<div class="card card-text-size">
+  
+  <div class="card-body">
+    <mat-form-field>
+      <mat-label>Preffered currency</mat-label>
+      <mat-select [(value)]="selected">
+
+        <mat-option *ngFor="let currency of currencies" [value]="currency.value">
+          {{currency.text}}
+        </mat-option>
+
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+
