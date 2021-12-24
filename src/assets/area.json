@@ -1,0 +1,19 @@
+[
+  {
+    "areaId": 1,
+    "areaName": "Richfield" 
+  },
+  {
+    "areaId": 2,
+    "areaName": "Potland"
+  },
+  {
+    "areaId": 3,
+    "areaName": "Seward"
+  },
+  {
+    "areaId": 4,
+    "areaName": "Jordan"
+  }
+
+]

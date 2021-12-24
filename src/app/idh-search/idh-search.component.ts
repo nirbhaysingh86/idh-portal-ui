@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { BaseChartDirective, Color, Label } from 'ng2-charts';
+import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 
 @Component({
   selector: 'app-idh-search',
@@ -20,8 +21,22 @@ export class IdhSearchComponent implements OnInit {
     { value: 'pound', text: 'Pounds £' },
     { value: 'inr', text: 'Indian Rupee ₹' }
   ];
+    areadata: any;
+
+  constructor(private idhConfigService: HttpClientIdhConfigService) {
+
+  }
+
   ngOnInit() {
-     
+    this.getArea();
+
+  }
+
+  getArea() {
+    this.idhConfigService.getArea().subscribe((data: any) => {
+      console.log(data);
+      this.areadata = data;
+    })
   }
 
 }

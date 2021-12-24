@@ -1,14 +1,12 @@
-
 <div class="card card-text-size">
-
   <div class="card-body">
     <div class="row">
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">Area</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of currencies" [value]="food.value">
-              {{food.text}}
+            <mat-option *ngFor="let area of areadata" [value]="area.areaId">
+              {{area.areaName}}
             </mat-option>
           </mat-select>
         </mat-form-field>

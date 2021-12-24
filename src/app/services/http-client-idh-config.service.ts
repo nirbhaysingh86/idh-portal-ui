@@ -3,25 +3,26 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ReconciliationService } from './reconciliation.service';
+import { IdhConfigService } from './idh-config.service';
 import { Department } from '../models/department';
 import { Location } from '../models/location';
 import { Items } from '../models/items';
 import { DiscrepancyLocationDetails } from '../models/discrepancylocationdetails';
+import { Area } from '../models/area';
  
 const cudOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 @Injectable({
   providedIn: 'root'
 })
 
-export class HttpClientReconciliationService extends ReconciliationService {
+export class HttpClientIdhConfigService extends IdhConfigService {
   
   constructor(private http: HttpClient) {
     super();
   }
 
-  getLocations(): Observable<Location[]> {
-    return this.http.get<Location[]>(this.locationUrl).pipe(
+  getArea(): Observable<Area[]> {
+    return this.http.get<Area[]>(this.areaUrl).pipe(
       catchError(this.handleError)
     );
   }
