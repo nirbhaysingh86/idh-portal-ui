@@ -5,7 +5,7 @@ import { BaseChartDirective, Color, Label } from 'ng2-charts';
 @Component({
   selector: 'app-idh-search',
   templateUrl: './idh-search.component.html',
-  styleUrls: ['./bar-chart.component.scss']
+  styleUrls: ['./idh-search.component.scss']
 })
 
 export class IdhSearchComponent implements OnInit {

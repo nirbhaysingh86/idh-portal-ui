@@ -1,5 +1,5 @@
 {
-  "name": "reconciliation-nrf",
+  "name": "idh-configuration",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

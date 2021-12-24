@@ -1,17 +1,76 @@
 
 <div class="card card-text-size">
-  
+
   <div class="card-body">
-    <mat-form-field>
-      <mat-label>Preffered currency</mat-label>
-      <mat-select [(value)]="selected">
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="container">
+          <mat-label class="mat-label-text">Area</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of currencies" [value]="food.value">
+              {{food.text}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="container">
+          <mat-label class="mat-label-text">SubArea</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of currencies" [value]="food.value">
+              {{food.text}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-        <mat-option *ngFor="let currency of currencies" [value]="currency.value">
-          {{currency.text}}
-        </mat-option>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="container">
+          <mat-label class="mat-label-text">System Code</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of currencies" [value]="food.value">
+              {{food.text}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="container">
+          <mat-label class="mat-label-text">Object Code</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of currencies" [value]="food.value">
+              {{food.text}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      </mat-select>
-    </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field  appearance="outline" class="container">
+          <mat-label class="mat-label-text">Resource Name</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of currencies" [value]="food.value">
+              {{food.text}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field class="container" appearance="outline" >
+           
+          <input matInput placeholder="Last Updated By" class="mat-label-text" value="">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row search-padding">
+      <div class="col-sm-1">  <button mat-raised-button color="primary" class="btn-search">SEARCH</button></div>
+      <div class="col-sm-1">   <button mat-button color="primary">Clear</button></div>
+
+    </div>
   </div>
 </div>
 

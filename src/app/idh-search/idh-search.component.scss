@@ -4,3 +4,18 @@
 .card-text-size {
   font-size: 10pt;
 }
+.container > * {
+  position: absolute;
+  top: 30vh;
+  left: 30vw;
+}
+.mat-label-text {
+  font-size: 13pt !important;
+  
+}
+.search-padding {
+  padding: 23px;
+}
+.btn-search {
+  background-color: #05a7e9 !important;
+}
