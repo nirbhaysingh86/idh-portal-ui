@@ -1,0 +1,364 @@
+[
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 948,
+    "Item": "005141416",
+    "sourceCount": 12,
+    "targetCount": 15
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 944,
+    "Item": "857450003",
+    "sourceCount": 9,
+    "targetCount": 12
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 948,
+    "Item": "387960052",
+    "sourceCount": 8,
+    "targetCount": 10
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 931,
+    "Item": "005010194",
+    "sourceCount": 5,
+    "targetCount": 3
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 931,
+    "Item": "173691671",
+    "sourceCount": 3,
+    "targetCount": 1
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 938,
+    "Item": "342400004",
+    "sourceCount": 1,
+    "targetCount": 3
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 948,
+    "Item": "527920011",
+    "sourceCount": 15,
+    "targetCount": 20
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 949,
+    "Item": "196260291",
+    "sourceCount": 35,
+    "targetCount": 38
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 938,
+    "Item": "A07530001",
+    "sourceCount": 40,
+    "targetCount": 45
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 946,
+    "Item": "859650004",
+    "sourceCount": 5,
+    "targetCount": 8
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 947,
+    "Item": "155050188",
+    "sourceCount": 17,
+    "targetCount": 15
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 931,
+    "Item": "288330374",
+    "sourceCount": 13,
+    "targetCount": 15
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 947,
+    "Item": "181810422",
+    "sourceCount": 8,
+    "targetCount": 15
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 934,
+    "Item": "188810562",
+    "sourceCount": 4,
+    "targetCount": 10
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 934,
+    "Item": "349640087",
+    "sourceCount": 8,
+    "targetCount": 6
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 941,
+    "Item": "380190320",
+    "sourceCount": 9,
+    "targetCount": 6
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 941,
+    "Item": "A07530001",
+    "sourceCount": 10,
+    "targetCount": 6
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 934,
+    "Item": "295070523",
+    "sourceCount": 11,
+    "targetCount": 12
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 942,
+    "Item": "005051994",
+    "sourceCount": 14,
+    "targetCount": 14
+  },
+  {
+    "locid": 3,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 948,
+    "Item": "360150080",
+    "sourceCount": 0,
+    "targetCount": 15
+  },
+
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 949,
+    "Item": "AA5141416",
+    "sourceCount": 12,
+    "targetCount": 15
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 946,
+    "Item": "857450003",
+    "sourceCount": 9,
+    "targetCount": 12
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 947,
+    "Item": "387960052",
+    "sourceCount": 8,
+    "targetCount": 10
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 931,
+    "Item": "005010194",
+    "sourceCount": 5,
+    "targetCount": 3
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 931,
+    "Item": "173691671",
+    "sourceCount": 3,
+    "targetCount": 1
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 936,
+    "Item": "342400004",
+    "sourceCount": 1,
+    "targetCount": 3
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 945,
+    "Item": "527920011",
+    "sourceCount": 15,
+    "targetCount": 20
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 944,
+    "Item": "196260291",
+    "sourceCount": 35,
+    "targetCount": 38
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 933,
+    "Item": "A07530001",
+    "sourceCount": 40,
+    "targetCount": 45
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 943,
+    "Item": "859650004",
+    "sourceCount": 5,
+    "targetCount": 8
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 944,
+    "Item": "155050188",
+    "sourceCount": 17,
+    "targetCount": 15
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 933,
+    "Item": "288330374",
+    "sourceCount": 13,
+    "targetCount": 15
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 942,
+    "Item": "181810422",
+    "sourceCount": 8,
+    "targetCount": 15
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 933,
+    "Item": "188810562",
+    "sourceCount": 4,
+    "targetCount": 10
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 934,
+    "Item": "349640087",
+    "sourceCount": 8,
+    "targetCount": 6
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 911,
+    "Item": "380190320",
+    "sourceCount": 9,
+    "targetCount": 6
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 931,
+    "Item": "A07530001",
+    "sourceCount": 10,
+    "targetCount": 6
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 934,
+    "Item": "295070523",
+    "sourceCount": 11,
+    "targetCount": 12
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 932,
+    "Item": "005051994",
+    "sourceCount": 14,
+    "targetCount": 14
+  },
+  {
+    "locid": 7,
+    "sourceSystem": "Merchandising",
+    "targetSystem": "Store",
+    "store": 948,
+    "Item": "360150080",
+    "sourceCount": 0,
+    "targetCount": 15
+  }
+
+]

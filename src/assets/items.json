@@ -1,0 +1,110 @@
+[
+  {
+    "itemid": 1,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Levis",
+    "itemsCode": "LV",
+    "itemsPrice": "456",
+    "discrepancy": 1599
+  },
+  {
+    "itemid": 2,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Lee",
+    "itemsCode": "LE",
+    "itemsPrice": "45",
+    "discrepancy": 136
+  },
+  {
+    "itemid": 3,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "lee cooper",
+    "itemsCode": "LC",
+    "itemsPrice": "43",
+    "discrepancy": 777
+  },
+  {
+    "itemid": 4,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Eagan Walmart",
+    "itemsCode": "EA",
+    "itemsPrice": "565",
+    "discrepancy": 1448
+  },
+  {
+    "itemid": 5,
+    "dptid": 1,
+    "locid": 2,
+    "itemsName": "Roseville Walmart",
+    "itemsCode": "RO",
+    "itemsPrice": "3455",
+    "discrepancy": 405
+  },
+  {
+    "itemid": 6,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Shakopee Walmart",
+    "itemsCode": "SH",
+    "itemsPrice": "345",
+    "discrepancy": 0
+  },
+  {
+    "itemid": 7,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Bloomington Walmart",
+    "itemsCode": "BL",
+    "itemsPrice": "456",
+    "discrepancy": 0
+  },
+  {
+    "itemid": 8,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Burnsville Walmart",
+    "itemsCode": "BU",
+    "itemsPrice": "45",
+    "discrepancy": 0
+  },
+  {
+    "itemid": 9,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Eden Prairie Walmart",
+    "itemsCode": "EP",
+    "itemsPrice": "43",
+    "discrepancy": 0
+  },
+  {
+    "itemid": 10,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Eagan Walmart",
+    "itemsCode": "EA",
+    "itemsPrice": "565",
+    "discrepancy": 0
+  },
+  {
+    "itemid": 11,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Roseville Walmart",
+    "itemsCode": "RO",
+    "itemsPrice": "3455",
+    "discrepancy": 0
+  },
+  {
+    "itemid": 12,
+    "dptid": 1,
+    "locid": 1,
+    "itemsName": "Shakopee Walmart",
+    "itemsCode": "SH",
+    "itemsPrice": "345",
+    "discrepancy": 0
+  }
+]

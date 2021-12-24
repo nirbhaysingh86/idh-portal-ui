@@ -1,0 +1,43 @@
+.row-padding{
+    padding-top:20px;
+}
+.card-text-align {
+  text-align: center;
+  background-color: #EFF1F5;
+  padding: 10px;
+}
+.card-title-text {
+  color: #577A9B;
+  font-weight: bold;
+}
+.loc-name {
+  padding-bottom: 10px;
+  text-decoration: underline;
+  font-size: 15pt;
+}
+table {
+  width: 100%;
+}
+.cdk-overlay-pane.my-dialog {
+  position: relative !important;
+}
+
+.close.mat-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  line-height: 14px;
+  min-width: auto;
+}
+.mat-header-cell {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  font-weight: bold !important;
+  font-size: 12pt !important;
+}
+.action-image {
+  width: 30px;
+  cursor: pointer;
+}

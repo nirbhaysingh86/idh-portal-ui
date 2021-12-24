@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\department",
+    "\\src\\app\\home-reconciliation",
+    "\\src\\app\\items",
+    "\\src\\app\\line-chart",
+    "\\src\\app\\location",
+    "\\src\\app\\nav-menu",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\line-chart\\line-chart.component.scss",
+  "PreviewInSolutionExplorer": false
+}

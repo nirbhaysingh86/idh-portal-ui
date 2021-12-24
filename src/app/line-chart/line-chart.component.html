@@ -1,0 +1,23 @@
+
+<div class="card card-text-size">
+  
+  <div class="card-body">
+    <div class="chartjs-container">
+      <span>
+        Stock Discrepancy Vs Estimated Value
+      </span>
+      <canvas baseChart id="linechart"
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"
+              #linechart
+              (chartClick)="chartClicked($event)"
+              [plugins]="lineChartPlugins">
+      </canvas>
+       
+    </div>
+  </div>
+</div>
