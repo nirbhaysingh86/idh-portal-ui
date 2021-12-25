@@ -19,7 +19,7 @@ export class IdhSearchComponent implements OnInit {
     { value: 'pound', text: 'Pounds £' },
     { value: 'inr', text: 'Indian Rupee ₹' }
   ];
-    areadata: any;
+  areadata: any;
 
   constructor(private idhConfigService: HttpClientIdhConfigService) {
 

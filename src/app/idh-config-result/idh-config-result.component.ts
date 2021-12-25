@@ -5,7 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { IdhConfig } from '../models/idhconfigresult';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 import { MatDialog } from '@angular/material/dialog';
-import { RecommendedActionsDialog } from '../recommended-actions-dialog/recommended-actions-dialog.component';
+import { IdhFilterDialogComponenet } from '../idh-filter-option-dialog/idh-filter-option-dialog.component';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Router } from '@angular/router';
 
@@ -78,9 +78,9 @@ export class IdhConfigResult {
     })
   }
 
-  showPopUp(row: any) {
+  showPopUp() {
     //row;
-    this.dialog.open(RecommendedActionsDialog, { panelClass: 'my-dialog', });
+    this.dialog.open(IdhFilterDialogComponenet, { panelClass: 'my-dialog', });
   }
 
   navigateToViewDetail(row: any) {

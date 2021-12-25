@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeIdhComponent } from './home-idh/home-idh.component';
-import { RecommendedActionsDialog } from './recommended-actions-dialog/recommended-actions-dialog.component';
+import { IdhFilterDialogComponenet } from './idh-filter-option-dialog/idh-filter-option-dialog.component';
 import { IdhConfigResult } from './idh-config-result/idh-config-result.component';
 import { IdhConfigDetailComponent } from './idh-config-detail/idh-config-detail.component';
 import { ChartsModule } from 'ng2-charts';
@@ -26,7 +26,7 @@ import { IdhSearchComponent } from './idh-search/idh-search.component';
     IdhConfigResult,
     IdhSearchComponent,
     IdhConfigDetailComponent,
-    RecommendedActionsDialog,
+    IdhFilterDialogComponenet,
   ],
   imports: [
     BrowserModule,
