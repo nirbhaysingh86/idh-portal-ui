@@ -19,16 +19,18 @@ export class IdhConfigResult {
   pageEvent: any;
   pageSize = 25;
   idhConfigResults: any[] = [];
-  displayedColumns: string[] = ['select','subjectAreaName', 'subjectSubAreaName', 'sourceSystemCode', 'objectName', 'resourceName', 'user', 'lastUpdatedDate','viewdetails'];
+  displayedColumns: string[] = ['select', 'subjectAreaName', 'subjectSubAreaName', 'sourceSystemCode', 'objectName', 'resourceName', 'user', 'lastUpdatedDate', 'viewdetails'];
   @ViewChild(MatPaginator) paginator: any;
   dataSource: MatTableDataSource<IdhConfig> = new MatTableDataSource();
   @ViewChild(MatSort, { static: false }) sort: any;
   selection = new SelectionModel<IdhConfig>(true, []);
+  promoteButtonEnable = false;
+ 
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
 
   }
-   
+
   ngOnInit() {
     this.getIdhConfigResult();
   }
@@ -40,7 +42,14 @@ export class IdhConfigResult {
 
     }
   }
+  checkBoxClicked($event:any) {
+    if (this.selection.selected.length > 1 && !$event.checked) {
+      this.promoteButtonEnable = true;
+    } else {
+      this.promoteButtonEnable = $event.checked;
+    }
 
+  }
   /** The label for the checkbox on the passed row */
   checkboxLabel(row?: IdhConfig): string {
     if (!row) {
@@ -87,9 +96,9 @@ export class IdhConfigResult {
     this.dataSource.sort = this.sort;
   }
 
-  getTooltip(column:any, row:any) {
+  getTooltip(column: any, row: any) {
     //return column + ' - ' + row[column];
-    return   row[column];
+    return row[column];
   }
 
 }

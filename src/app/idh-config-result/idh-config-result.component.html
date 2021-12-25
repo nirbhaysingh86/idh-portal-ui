@@ -8,7 +8,7 @@
      
       <div class="col-sm-9 direction-right">
        <span class="filter-count">0</span> Filter <mat-icon class="filter-shape">filter_alt</mat-icon>
-        <a mat-button routerLink="." class="new-config-link" appearance="outline">PROMOTE SELECTED<mat-icon>arrow_upward</mat-icon></a>
+        <a mat-button routerLink="." class="new-config-link" appearance="outline" [disabled]="!promoteButtonEnable"  >PROMOTE SELECTED<mat-icon>arrow_upward</mat-icon></a>
 
       </div>
     </div>
@@ -28,7 +28,7 @@
         </mat-header-cell>
 
         <mat-cell *matCellDef="let row">
-          <mat-checkbox (click)="$event.stopPropagation()"
+          <mat-checkbox (change)="checkBoxClicked($event)"
                         (change)="$event ? selection.toggle(row) : null"
                         [checked]="selection.isSelected(row)"
                         [aria-label]="checkboxLabel(row)">
