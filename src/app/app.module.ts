@@ -13,8 +13,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeIdhComponent } from './home-idh/home-idh.component';
 import { RecommendedActionsDialog } from './recommended-actions-dialog/recommended-actions-dialog.component';
 import { IdhConfigResult } from './idh-config-result/idh-config-result.component';
+import { IdhConfigDetailComponent } from './idh-config-detail/idh-config-detail.component';
 import { ChartsModule } from 'ng2-charts';
- 
 import { IdhSearchComponent } from './idh-search/idh-search.component';
  
 
@@ -25,7 +25,7 @@ import { IdhSearchComponent } from './idh-search/idh-search.component';
     HomeIdhComponent,
     IdhConfigResult,
     IdhSearchComponent,
-   
+    IdhConfigDetailComponent,
     RecommendedActionsDialog,
   ],
   imports: [
@@ -40,8 +40,10 @@ import { IdhSearchComponent } from './idh-search/idh-search.component';
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeIdhComponent },
-      { path: 'search', component: IdhSearchComponent },
-      { path: 'result', component: IdhConfigResult },
+      { path: 'configsearch', component: IdhSearchComponent },
+      { path: 'configresult', component: IdhConfigResult },
+      { path: 'configdetail', component: IdhConfigDetailComponent },
+      
     ]), BrowserAnimationsModule
   ], 
   providers: [],

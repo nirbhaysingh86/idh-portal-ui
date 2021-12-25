@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { BaseChartDirective, Color, Label } from 'ng2-charts';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 
 @Component({

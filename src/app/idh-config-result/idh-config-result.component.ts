@@ -7,6 +7,7 @@ import { HttpClientIdhConfigService } from '../services/http-client-idh-config.s
 import { MatDialog } from '@angular/material/dialog';
 import { RecommendedActionsDialog } from '../recommended-actions-dialog/recommended-actions-dialog.component';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-idh-config-result',
@@ -24,7 +25,7 @@ export class IdhConfigResult {
   @ViewChild(MatSort, { static: false }) sort: any;
   selection = new SelectionModel<IdhConfig>(true, []);
 
-  constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog) {
+  constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
 
   }
    
@@ -71,6 +72,10 @@ export class IdhConfigResult {
   showPopUp(row: any) {
     //row;
     this.dialog.open(RecommendedActionsDialog, { panelClass: 'my-dialog', });
+  }
+
+  navigateToViewDetail(row: any) {
+    this.router.navigate(['/configdetail']);
   }
 
   ngAfterViewInit() {

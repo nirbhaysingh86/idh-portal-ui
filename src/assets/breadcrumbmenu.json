@@ -1,12 +1,17 @@
 [
   {
     "routerText": "Search",
-    "routerLink": "/home"
-
+    "routerLink": "/configsearch",
+    "isDisplay": true
   },
   {
     "routerText": "Results",
-    "routerLink": "/result"
-  } 
-
+    "routerLink": "/configresult",
+    "isDisplay": true
+  },
+  {
+    "routerText": "Detail",
+    "routerLink": "/configdetail",
+    "isDisplay": false
+  }
 ]

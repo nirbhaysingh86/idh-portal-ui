@@ -17,7 +17,7 @@
   <div class="row header-row">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList "><a  [ngClass]="[breadmenu.routerText === selectedrouterText ? 'active-breadmenu' : '']" (click)="getSelectedMenu(breadmenu.routerText)" routerLink="{{breadmenu.routerLink}}">{{breadmenu.routerText}}</a></li>
+        <li class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList " ><a *ngIf="breadmenu.isDisplay" [ngClass]="[breadmenu.routerText === selectedrouterText ? 'active-breadmenu' : '']" (click)="getSelectedMenu(breadmenu.routerText)" routerLink="{{breadmenu.routerLink}}">{{breadmenu.routerText}}</a></li>
       </ol>
     </nav>
     <span>CONFIGURATION</span>
