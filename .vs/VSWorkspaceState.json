@@ -4,11 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\home-idh",
-    "\\src\\app\\models",
+    "\\src\\app\\idh-config-detail",
+    "\\src\\app\\idh-config-result",
+    "\\src\\app\\idh-search",
     "\\src\\app\\nav-menu",
     "\\src\\app\\services",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\home-idh\\home-idh.component.scss",
+  "SelectedNode": "\\src\\app\\idh-config-detail\\idh-config-detail.component.ts",
   "PreviewInSolutionExplorer": false
 }
