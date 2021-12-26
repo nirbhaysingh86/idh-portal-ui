@@ -18,9 +18,9 @@ export class MultiselectAutocompleteComponent implements OnInit {
   @Input() placeholder: string = 'Select Data';
   @Input() data: Array<string> = [];
   @Input() key: string = '';
-
+  @Input() selectedData: any;
   selectControl = new FormControl();
-
+ 
   rawData: Array<ItemData> = [];
   selectData: Array<ItemData> = [];
 
@@ -50,6 +50,7 @@ export class MultiselectAutocompleteComponent implements OnInit {
     } else {
       return this.rawData.slice();
     }
+    
   };
 
   displayFn = (): string => '';
@@ -71,6 +72,7 @@ export class MultiselectAutocompleteComponent implements OnInit {
 
     this.selectControl.setValue(this.selectData);
     this.emitAdjustedData();
+     
   };
 
   emitAdjustedData = (): void => {

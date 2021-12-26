@@ -61,14 +61,20 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <multiselect-autocomplete class="mat-label-text container" placeholder="User" appearance="outline"
+          <mat-form-field appearance="outline" class="container">
+
+            <mat-select [formControl]="user" multiple placeholder="User">
+              <mat-option *ngFor="let topping of selectOptions" [value]="topping">{{topping}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--<multiselect-autocomplete class="mat-label-text container" placeholder="User" appearance="outline"
                                     key="options"
                                     [data]="selectOptions"
+                                    [selectedData]="cardValue.options.join()"
                                     (result)="selectChange($event)">
           </multiselect-autocomplete>
 
-
-          <!--<mat-card class="card-wrapper answers">
+          <mat-card class="card-wrapper answers">
             <ng-container *ngIf="cardValue.options.length === 0">
               No Selected Options
             </ng-container>
@@ -77,7 +83,7 @@
                 {{ option }}
               </div>
             </ng-container>
-          </mat-card>-->
+           </mat-card>-->
 
         </div>
       </div>

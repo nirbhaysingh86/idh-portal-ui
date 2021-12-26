@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'idh-filter-option-dialog',
@@ -13,6 +14,7 @@ export class IdhFilterDialogComponenet {
     { value: 'pound', text: 'Pounds £' },
     { value: 'inr', text: 'Indian Rupee ₹' }
   ];
+  user = new FormControl();
   onGoToHelpDesk() {
 
   }
