@@ -17,7 +17,8 @@ import { IdhConfigDetailComponent } from './idh-config-detail/idh-config-detail.
 import { PromoteDialogComponenet } from './promote-dialog/promote-dialog.component';
 import { ChartsModule } from 'ng2-charts';
 import { IdhSearchComponent } from './idh-search/idh-search.component';
- 
+import { MultiselectAutocompleteComponent } from './shared/multiselect-autocomplete/multiselect-autocomplete.component';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { IdhSearchComponent } from './idh-search/idh-search.component';
     IdhConfigDetailComponent,
     IdhFilterDialogComponenet,
     PromoteDialogComponenet,
+    MultiselectAutocompleteComponent
   ],
   imports: [
     BrowserModule,

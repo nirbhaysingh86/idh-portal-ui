@@ -16,4 +16,18 @@ export class IdhFilterDialogComponenet {
   onGoToHelpDesk() {
 
   }
+  cardValue: any = {
+    options: []
+  };
+
+  selectOptions: Array<string> = [
+    'IAH122', 'IAH123', 'IAH124', 'IAH125', 'IAH126', 'IAH127', 'IAH128', 'IAH129', 'IAH131', 'IAH132'
+  ];
+
+  selectChange = (event: any) => {
+    const key: string = event.key;
+    this.cardValue[key] = [...event.data];
+
+    console.log(this.cardValue);
+  };
 }

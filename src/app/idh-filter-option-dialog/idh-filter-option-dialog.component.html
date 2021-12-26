@@ -61,16 +61,29 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field class="container" appearance="outline">
+          <multiselect-autocomplete class="mat-label-text container" placeholder="User" appearance="outline"
+                                    key="options"
+                                    [data]="selectOptions"
+                                    (result)="selectChange($event)">
+          </multiselect-autocomplete>
 
-            <input matInput placeholder="User" class="mat-label-text" value="">
-            <mat-hint class="mat-hint-text">User IA or CN number</mat-hint>
-          </mat-form-field>
+
+          <!--<mat-card class="card-wrapper answers">
+            <ng-container *ngIf="cardValue.options.length === 0">
+              No Selected Options
+            </ng-container>
+            <ng-container *ngIf="cardValue.options.length > 0">
+              <div *ngFor="let option of cardValue.options">
+                {{ option }}
+              </div>
+            </ng-container>
+          </mat-card>-->
+
         </div>
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field   class="container" appearance="outline">
+          <mat-form-field class="container" appearance="outline">
             <input matInput [matDatepicker]="picker2" placeholder="Last Updated" class="mat-label-text">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2 color="primary"></mat-datepicker>
