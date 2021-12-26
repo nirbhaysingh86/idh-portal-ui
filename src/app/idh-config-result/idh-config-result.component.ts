@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { IdhFilterDialogComponenet } from '../idh-filter-option-dialog/idh-filter-option-dialog.component';
 import { SelectionModel } from '@angular/cdk/collections';
 import { Router } from '@angular/router';
+import { PromoteDialogComponenet } from '../promote-dialog/promote-dialog.component';
 
 @Component({
   selector: 'app-idh-config-result',
@@ -25,14 +26,17 @@ export class IdhConfigResult {
   @ViewChild(MatSort, { static: false }) sort: any;
   selection = new SelectionModel<IdhConfig>(true, []);
   promoteButtonEnable = false;
- 
+  envType: any;
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
-
+    if (this.router && this.router.getCurrentNavigation()) {
+      this.envType = this.router.getCurrentNavigation()?.extras.state;
+    }
   }
 
   ngOnInit() {
     this.getIdhConfigResult();
+    
   }
 
   //table  will display based on location selection
@@ -42,7 +46,7 @@ export class IdhConfigResult {
 
     }
   }
-  checkBoxClicked($event:any) {
+  checkBoxClicked($event: any) {
     if (this.selection.selected.length > 1 && !$event.checked) {
       this.promoteButtonEnable = true;
     } else {
@@ -79,8 +83,14 @@ export class IdhConfigResult {
   }
 
   showPopUp() {
-    //row;
+
     this.dialog.open(IdhFilterDialogComponenet, { panelClass: 'my-dialog', });
+  }
+
+  showPromotePopUp() {
+    
+    const modalRef = this.dialog.open(PromoteDialogComponenet, { panelClass: 'my-dialog', });
+    modalRef.componentInstance.promote = this.envType;
   }
 
   navigateToViewDetail(row: any) {

@@ -14,6 +14,7 @@ import { HomeIdhComponent } from './home-idh/home-idh.component';
 import { IdhFilterDialogComponenet } from './idh-filter-option-dialog/idh-filter-option-dialog.component';
 import { IdhConfigResult } from './idh-config-result/idh-config-result.component';
 import { IdhConfigDetailComponent } from './idh-config-detail/idh-config-detail.component';
+import { PromoteDialogComponenet } from './promote-dialog/promote-dialog.component';
 import { ChartsModule } from 'ng2-charts';
 import { IdhSearchComponent } from './idh-search/idh-search.component';
  
@@ -27,6 +28,7 @@ import { IdhSearchComponent } from './idh-search/idh-search.component';
     IdhSearchComponent,
     IdhConfigDetailComponent,
     IdhFilterDialogComponenet,
+    PromoteDialogComponenet,
   ],
   imports: [
     BrowserModule,

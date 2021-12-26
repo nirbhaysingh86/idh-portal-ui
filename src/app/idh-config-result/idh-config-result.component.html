@@ -8,7 +8,7 @@
      
       <div class="col-sm-9 direction-right">
        <span class="filter-count">0</span> Filter <mat-icon class="filter-shape" (click)="showPopUp()">filter_alt</mat-icon>
-        <a mat-button routerLink="." class="new-config-link" appearance="outline" [disabled]="!promoteButtonEnable"  >PROMOTE SELECTED<mat-icon>arrow_upward</mat-icon></a>
+        <a mat-button routerLink="." class="new-config-link" appearance="outline" [disabled]="!promoteButtonEnable" (click)="showPromotePopUp()"  >PROMOTE SELECTED<mat-icon>arrow_upward</mat-icon></a>
 
       </div>
     </div>

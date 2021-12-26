@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class NavMenuComponent {
   breadcrumbMenuList: any;
   selectedrouterText: any;
   envType: any;
-  constructor(private idhConfigService: HttpClientIdhConfigService) {
+  constructor(private idhConfigService: HttpClientIdhConfigService, private router: Router) {
 
   }
 
@@ -28,8 +29,9 @@ export class NavMenuComponent {
     })
   }
 
-  getSelectedMenu(routerText:any) {
+  getSelectedMenu(routerText:any,routeLink:any) {
     this.selectedrouterText = routerText;
+    this.router.navigate([routeLink], { state: { selectedEnvType: this.envType } });
   }
 
   menuClick(envType:any) {
