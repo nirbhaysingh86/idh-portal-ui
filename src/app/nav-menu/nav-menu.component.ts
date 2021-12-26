@@ -9,7 +9,7 @@ import { HttpClientIdhConfigService } from '../services/http-client-idh-config.s
 export class NavMenuComponent {
   breadcrumbMenuList: any;
   selectedrouterText: any;
-
+  envType: any;
   constructor(private idhConfigService: HttpClientIdhConfigService) {
 
   }
@@ -17,6 +17,7 @@ export class NavMenuComponent {
   ngOnInit() {
     this.getIdhConfigResult();
     this.selectedrouterText = 'Search';
+    this.envType = 'DEV';
   }
 
   getIdhConfigResult() {
@@ -29,5 +30,9 @@ export class NavMenuComponent {
 
   getSelectedMenu(routerText:any) {
     this.selectedrouterText = routerText;
+  }
+
+  menuClick(envType:any) {
+    this.envType = envType;
   }
 }

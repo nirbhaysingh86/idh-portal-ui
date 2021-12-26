@@ -14,10 +14,17 @@
 
       </div>
       <div class="direction-right right-direction ">
-        <span class="material-icons filter-shape">
+        <span class="material-icons filter-shape" [matMenuTriggerFor]="menu">
           monitor
-        </span> Current Environment
-         
+        </span> Current Environment {{envType}}
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="menuClick('DEV')">DEV</button>
+          <button mat-menu-item (click)="menuClick('SIT')">SIT</button>
+          <button mat-menu-item (click)="menuClick('UAT')">UAT</button>
+          <button mat-menu-item (click)="menuClick('PREP')">PREP</button>
+          <button mat-menu-item (click)="menuClick('PROD')">PROD</button>
+        </mat-menu>
       </div>
     </div>
   </nav>
