@@ -7,8 +7,8 @@
         <div class="col-sm-6">
           <mat-form-field appearance="outline" class="container">
             <mat-label class="mat-label-text">Area</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let area of currencies" [value]="area.value">
+            <mat-select [(ngModel)]="area">
+              <mat-option *ngFor="let area of idhserach" [value]="area.value">
                 {{area.text}}
               </mat-option>
             </mat-select>
@@ -17,8 +17,8 @@
         <div class="col-sm-6">
           <mat-form-field appearance="outline" class="container">
             <mat-label class="mat-label-text">SubArea</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of currencies" [value]="food.value">
+            <mat-select [(ngModel)]="subArea">
+              <mat-option *ngFor="let food of idhserach" [value]="food.value">
                 {{food.text}}
               </mat-option>
             </mat-select>
@@ -30,8 +30,8 @@
         <div class="col-sm-6">
           <mat-form-field appearance="outline" class="container">
             <mat-label class="mat-label-text">System Code</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of currencies" [value]="food.value">
+            <mat-select [(ngModel)]="systemCode">
+              <mat-option *ngFor="let food of idhserach" [value]="food.value">
                 {{food.text}}
               </mat-option>
             </mat-select>
@@ -40,8 +40,8 @@
         <div class="col-sm-6">
           <mat-form-field appearance="outline" class="container">
             <mat-label class="mat-label-text">Object Code</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of currencies" [value]="food.value">
+            <mat-select [(ngModel)]="objectCode">
+              <mat-option *ngFor="let food of idhserach" [value]="food.value">
                 {{food.text}}
               </mat-option>
             </mat-select>
@@ -53,8 +53,8 @@
         <div class="col-sm-6">
           <mat-form-field appearance="outline" class="container">
             <mat-label class="mat-label-text">Resource Name</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let food of currencies" [value]="food.value" >
+            <mat-select [(ngModel)]="resourceName">
+              <mat-option *ngFor="let food of idhserach" [value]="food.value" >
                 {{food.text}}
               </mat-option>
             </mat-select>
@@ -102,7 +102,7 @@
 
 </div>
 <div mat-dialog-actions class="direction-right">
-  <button mat-raised-button mat-dialog-close class="btn-filter">APPLY FILTERS</button>
+  <button mat-raised-button  class="btn-filter" (click)="applyFilter()">APPLY FILTERS</button>
 
   <button mat-raised-button mat-dialog-close class="btn-cancel">CANCEL</button>
 

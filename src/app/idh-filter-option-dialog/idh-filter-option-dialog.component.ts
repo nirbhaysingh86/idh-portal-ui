@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, Optional, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'idh-filter-option-dialog',
@@ -7,14 +8,40 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./idh-filter-option-dialog.component.scss']
 })
 export class IdhFilterDialogComponenet {
-  currencies = [
-    { value: 'L', text: 'Lorem' },
-    { value: 'i', text: 'Ipsum' } 
+  idhserach = [
+    { value: 'Lorem', text: 'Lorem' },
+    { value: 'Ipsum', text: 'Ipsum' }
   ];
   user = new FormControl();
-  onGoToHelpDesk() {
+  objectCode: any;
+  resourceName: any;
+  systemCode: any;
+  subArea: any;
+  area: any;
+  @Input() public dialogValue: any;
+
+  constructor(
+    public dialogRef: MatDialogRef<IdhFilterDialogComponenet>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+     
+  }
+  ngOnInit() {
+    if (this.dialogValue) {
+      this.user.setValue( this.dialogValue.user);
+      this.objectCode = this.dialogValue.objectCode;
+      this.resourceName = this.dialogValue.resourceName;
+      this.systemCode = this.dialogValue.systemCode;
+      this.subArea = this.dialogValue.subArea;
+      this.area = this.dialogValue.area;
+    }
 
   }
+  applyFilter() {
+    this.area;
+    this.dialogRef.close({ event: 'close', objectCode: this.objectCode, resourceName: this.resourceName, systemCode: this.systemCode, subArea: this.subArea, area: this.area, user: this.user?.value });
+  }
+
   cardValue: any = {
     options: []
   };
@@ -29,4 +56,6 @@ export class IdhFilterDialogComponenet {
 
     console.log(this.cardValue);
   };
+
+   
 }

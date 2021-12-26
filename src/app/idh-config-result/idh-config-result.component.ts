@@ -27,6 +27,8 @@ export class IdhConfigResult {
   selection = new SelectionModel<IdhConfig>(true, []);
   promoteButtonEnable = false;
   envType: any;
+  dialogValue: any;
+  filterCount: any;
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
     if (this.router && this.router.getCurrentNavigation()) {
@@ -36,7 +38,7 @@ export class IdhConfigResult {
 
   ngOnInit() {
     this.getIdhConfigResult();
-    
+    this.filterCount = 0;
   }
 
   //table  will display based on location selection
@@ -83,11 +85,42 @@ export class IdhConfigResult {
   }
 
   showFilterPopUp() {
-    this.dialog.open(IdhFilterDialogComponenet, { panelClass: 'my-dialog', });
+    const modalRef = this.dialog.open(IdhFilterDialogComponenet, { panelClass: 'my-dialog', });
+    modalRef.componentInstance.dialogValue = this.dialogValue;
+    modalRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+      this.dialogValue = result;
+      this.countFilter();
+    });
+  }
+
+  countFilter() {
+     
+    let count = 0;
+    if (this.dialogValue && this.dialogValue.area) {
+      count += 1;
+    }
+    if (this.dialogValue && this.dialogValue.objectCode) {
+      count += 1;
+    }
+    if (this.dialogValue && this.dialogValue.resourceName) {
+      count += 1;
+    }
+    if (this.dialogValue && this.dialogValue.subArea) {
+      count += 1;
+    }
+    if (this.dialogValue && this.dialogValue.systemCode) {
+      count += 1;
+    }
+    if (this.dialogValue && this.dialogValue.user) {
+      count += 1;
+    }
+    this.filterCount = count;
+
   }
 
   showPromotePopUp() {
-    
+
     const modalRef = this.dialog.open(PromoteDialogComponenet, { panelClass: 'my-dialog', });
     modalRef.componentInstance.promote = this.envType;
   }
