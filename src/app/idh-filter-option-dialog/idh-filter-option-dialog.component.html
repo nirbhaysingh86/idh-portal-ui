@@ -1,5 +1,5 @@
- 
-<h1 mat-dialog-title>Filter Options</h1>
+
+<h1 mat-dialog-title class="dialog-title">Filter Options</h1>
 <div mat-dialog-content>
   <div class="card card-text-size">
     <div class="card-body">
@@ -63,18 +63,28 @@
         <div class="col-sm-6">
           <mat-form-field class="container" appearance="outline">
 
-            <input matInput placeholder="Last Updated By" class="mat-label-text" value="">
+            <input matInput placeholder="User" class="mat-label-text" value="">
             <mat-hint class="mat-hint-text">User IA or CN number</mat-hint>
           </mat-form-field>
         </div>
       </div>
-       
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field   class="container" appearance="outline">
+            <input matInput [matDatepicker]="picker2" placeholder="Last Updated" class="mat-label-text">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2 color="primary"></mat-datepicker>
+          </mat-form-field>
+
+        </div>
+      </div>
     </div>
   </div>
 
 </div>
-<div mat-dialog-actions>
-  <button mat-raised-button mat-dialog-close color="warn">Close</button>
-  <button mat-raised-button mat-dialog-close  >APPLY FILTERS</button>
+<div mat-dialog-actions class="direction-right">
+  <button mat-raised-button mat-dialog-close class="btn-filter">APPLY FILTERS</button>
+
+  <button mat-raised-button mat-dialog-close class="btn-cancel">CANCEL</button>
 
 </div>

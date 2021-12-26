@@ -82,8 +82,7 @@ export class IdhConfigResult {
     })
   }
 
-  showPopUp() {
-
+  showFilterPopUp() {
     this.dialog.open(IdhFilterDialogComponenet, { panelClass: 'my-dialog', });
   }
 
