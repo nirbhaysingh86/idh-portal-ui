@@ -38,5 +38,19 @@ body {
 .mat-select-panel ng-animating {
   visibility: hidden;
 }
+.direction-right {
+  direction: rtl;
+}
 
- 
+.filter-shape {
+  height: 45px;
+  width: 45px;
+  background-color: #f6f2f2;
+  border-radius: 50%;
+  display: inline-block;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-left: 19px;
+  cursor: pointer;
+  color: #7fd2f3
+}
