@@ -8,11 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class IdhFilterDialogComponenet {
   currencies = [
-    { value: 'us', text: 'U.S. Dollar $' },
-    { value: 'euro', text: 'Euro €' },
-    { value: 'yen', text: 'Japanese Yen ¥' },
-    { value: 'pound', text: 'Pounds £' },
-    { value: 'inr', text: 'Indian Rupee ₹' }
+    { value: 'L', text: 'Lorem' },
+    { value: 'i', text: 'Ipsum' } 
   ];
   user = new FormControl();
   onGoToHelpDesk() {
