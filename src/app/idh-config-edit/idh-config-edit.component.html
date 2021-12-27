@@ -7,6 +7,78 @@
     </div>
   </div>
   <form [formGroup]="configeditForm" (ngSubmit)="onSubmit()">
+    <!--Configuration Options-->
+    <div class="row bolder-div-padding">
+      <div class="col-sm-6">
+        <div class="bolder-header-div">Configuration Options</div>
+        <div class="content-div">Define how this ingestion configuration should be processed in IDH.</div>
+      </div>
+    </div>
+    <div class="row div-padding">
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Ingest into S3 Taxonomy</mat-label>
+              <mat-select formControlName="ingestTaxonomy" (selectionChange)="ingestChange($event.value)">
+                <mat-option value="yes">Yes</mat-option>
+                <mat-option value="no">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="!ingestDisplay">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Copy to Source </mat-label>
+              <mat-select formControlName="copyToSource">
+                <mat-option value="yes">Yes</mat-option>
+                <mat-option value="no">No</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Data Load Type</mat-label>
+              <mat-select formControlName="dataLoadType">
+                <mat-option value="full">Full</mat-option>
+                <mat-option value="delta">Delta</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="!ingestDisplay">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Number Of Retained Versions</mat-label>
+              <mat-select formControlName="retainedVersion">
+                <mat-option value="s3v1">S3-v1</mat-option>
+                <mat-option value="s3v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Service Escalation Level</mat-label>
+              <mat-select formControlName="escalationLevel">
+                <mat-option value="priority1">Priority 1</mat-option>
+                <mat-option value="priority2">Priority 2</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
     <!--Error Handling-->
     <div class="row bolder-div-padding ">
       <div class="col-sm-6">
@@ -15,15 +87,15 @@
       </div>
     </div>
     <div class="row div-padding">
-        <div class="row div-padding" >
-          <div class="col-sm-6">
-            <mat-form-field appearance="outline" class="container">
-              <mat-label>Plan Name</mat-label>
-              <mat-select formControlName="errorHandling">
-                <mat-option value="yes">Yes</mat-option>
-                <mat-option value="no">No</mat-option>
-              </mat-select>
-            </mat-form-field>
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="container">
+            <mat-label>Error Handling Event</mat-label>
+            <mat-select formControlName="errorHandling">
+              <mat-option value="yes">Yes</mat-option>
+              <mat-option value="no">No</mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
       </div>
     </div>

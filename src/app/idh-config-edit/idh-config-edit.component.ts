@@ -8,14 +8,15 @@ import { FormBuilder, FormGroup, FormArray, AbstractControl } from '@angular/for
 
 export class IdhConfigEditComponent implements OnInit {
   idhConfig = 'Angular';
-
+  ingestDisplay: any;
   configeditForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
 
     this.configeditForm = this.fb.group({
       idhConfig: '',
-      errorHandling:'',
+      errorHandling: '',
+      configurationOption: this.fb.group({ ingestTaxonomy: '',copyToSource:'',dataLoadType:'',retainedVersion:'',escalationLevel:'priority1', }),
       projectDetail: this.fb.array([]),
       copyToLowerEnv: this.fb.array([]),
       activeBatch: this.fb.array([]),
@@ -112,7 +113,11 @@ export class IdhConfigEditComponent implements OnInit {
   removeCopyToLowerEnv(i: number) {
     this.copyToLowerEnv().removeAt(i);
   }
-  
+  /** Copy To LowerEnv */
+  ingestChange(value: any) {
+    this.ingestDisplay = value == 'no';
+  }
+
   onSubmit() {
     console.log(this.configeditForm.value);
   }
