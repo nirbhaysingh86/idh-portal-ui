@@ -42,10 +42,14 @@ html {
 .header-row {
   padding-top: 30px;
 }
-.active-breadmenu {
+.in-active-breadmenu {
   text-decoration: none;
   color: black;
-  cursor: default;
+  cursor: default!important;
+}
+.active-breadmenu {
+   
+  cursor: pointer !important;
 }
 .new-config-link {
   color: #7fd2f3;

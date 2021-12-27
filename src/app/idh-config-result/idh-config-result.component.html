@@ -90,17 +90,13 @@
     </mat-paginator>
   </div>
 </div>
+<!-- No matches found, remove some filters and refresh your results-->
 <div *ngIf="!isload">
   <div class="col-sm-12">
-
     <div class="no-result-div"> <mat-icon class="error-outline-icon">error_outline</mat-icon> </div>
-
   </div>
-
   <div class="col-sm-12">
-
     <div class="no-result-div"> No matches found, remove some filters and refresh your results.  </div>
-
   </div>
   <div class="col-sm-12">
 
@@ -109,24 +105,20 @@
         <mat-chip-list #chipList>
           <ng-container *ngFor="let select of selectData">
             <mat-chip class="cardinal-colors" (click)="removeChip(select)">
-              <mat-icon class="mat-chip-remove ">cancel</mat-icon><div class="mat-chip-text">{{ select.item }}</div> 
-              
+              <mat-icon class="mat-chip-remove ">cancel</mat-icon><div class="mat-chip-text">{{ select.item }}</div>
+
             </mat-chip>
           </ng-container>
         </mat-chip-list>
       </div>
     </div>
-
   </div>
-
   <div class="col-sm-12">
-
     <div class="no-result-div"> <mat-icon class="" [ngClass]="{'error-outline-icon': true, 'enable-refresh' : isRefreshClick === true }" (click)="refreshResult()">refresh</mat-icon> </div>
-    <div   [ngClass]="{'no-result-div': true, 'enable-refresh' : isRefreshClick === true }">REFRESH RESULTS</div>
+    <div [ngClass]="{'no-result-div': true, 'enable-refresh' : isRefreshClick === true }">REFRESH RESULTS</div>
   </div>
-
-
 </div>
+<!--No Results Found-->
 <div *ngIf="this.dataSource.data.length==0">
-  <div class="no-results-found">No Results Found</div> 
+  <div class="no-results-found">No Results Found</div>
 </div>
