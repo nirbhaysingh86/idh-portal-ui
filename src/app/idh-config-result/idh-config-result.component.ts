@@ -91,11 +91,67 @@ export class IdhConfigResult {
       console.log('The dialog was closed', result);
       this.dialogValue = result;
       this.countFilter();
+      this.filterdataBasedOnSelection();
+
     });
   }
 
+  filterdataBasedOnSelection() {
+    if (this.dialogValue && this.dialogValue.user) {
+      for (let i = 0; i < this.dialogValue.user.length; i++) {
+        const filterValue = this.dialogValue.user[i];
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+        if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+          break;
+        }
+      }
+    }
+    if (this.dialogValue && this.dialogValue.area) {
+      const filterValue = this.dialogValue.area;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
+    if (this.dialogValue && this.dialogValue.objectCode) {
+      const filterValue = this.dialogValue.objectCode;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
+    if (this.dialogValue && this.dialogValue.resourceName) {
+      const filterValue = this.dialogValue.resourceName;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
+    if (this.dialogValue && this.dialogValue.subArea) {
+      const filterValue = this.dialogValue.subArea;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
+    if (this.dialogValue && this.dialogValue.objectCode) {
+      const filterValue = this.dialogValue.objectCode;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
+    if (this.dialogValue && this.dialogValue.systemCode) {
+      const filterValue = this.dialogValue.systemCode;
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
+  }
+
   countFilter() {
-     
+
     let count = 0;
     if (this.dialogValue && this.dialogValue.area) {
       count += 1;

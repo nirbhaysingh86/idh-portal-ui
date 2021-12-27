@@ -6,7 +6,7 @@
     "sourceSystemCode": "Dolor",
     "objectName": "Dolor",
     "resourceName": "Dolor",
-    "user": "IAH111",
+    "user": "IAH123",
     "lastUpdatedDate": "2021-12-24"
   },
   {
@@ -15,8 +15,16 @@
     "sourceSystemCode": "Dolor",
     "objectName": "Dolor",
     "resourceName": "Dolor",
-    "user": "IAH000",
+    "user": "IAH121",
     "lastUpdatedDate": "2021-12-24"
-  } 
-
+  },
+  {
+    "subjectAreaName": "Rosem",
+    "subjectSubAreaName": "Cpsum",
+    "sourceSystemCode": "Dolor",
+    "objectName": "Dolor",
+    "resourceName": "Dolor",
+    "user": "IAH124",
+    "lastUpdatedDate": "2021-12-24"
+  }
 ]
