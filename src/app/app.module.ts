@@ -15,7 +15,7 @@ import { IdhFilterDialogComponenet } from './idh-filter-option-dialog/idh-filter
 import { IdhConfigResult } from './idh-config-result/idh-config-result.component';
 import { IdhConfigDetailComponent } from './idh-config-detail/idh-config-detail.component';
 import { IdhConfigEditComponent } from './idh-config-edit/idh-config-edit.component';
- 
+import { PromoteDialogSuccessComponenet } from './promote-dialog-success/promote-dialog-success.component';
 import { PromoteDialogComponenet } from './promote-dialog/promote-dialog.component';
 import { ChartsModule } from 'ng2-charts';
 import { IdhSearchComponent } from './idh-search/idh-search.component';
@@ -33,7 +33,8 @@ import { MultiselectAutocompleteComponent } from './shared/multiselect-autocompl
     IdhFilterDialogComponenet,
     PromoteDialogComponenet,
     MultiselectAutocompleteComponent,
-    IdhConfigEditComponent
+    IdhConfigEditComponent,
+    PromoteDialogSuccessComponenet
   ],
   imports: [
     BrowserModule,

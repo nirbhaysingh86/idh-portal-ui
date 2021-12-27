@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PromoteDialogSuccessComponenet } from '../promote-dialog-success/promote-dialog-success.component';
 
 @Component({
   selector: 'promote-dialog',
@@ -9,8 +11,13 @@ export class PromoteDialogComponenet {
   @Input() public promote: any;
   slectedEnv: any;
 
-  goTopromote() {
+  constructor(private dialog: MatDialog) {
 
+  }
+  /** Open the promote dialog. */
+  goTopromote() {
+    const modalRef = this.dialog.open(PromoteDialogSuccessComponenet, { panelClass: 'my-dialog', });
+    modalRef.componentInstance.promotesuccess = this.slectedEnv;
   }
   ngOnInit() {
     if (this.promote && this.promote.selectedEnvType) {

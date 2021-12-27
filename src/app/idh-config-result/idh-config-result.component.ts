@@ -46,16 +46,7 @@ export class IdhConfigResult {
     this.filterCount = 0;
     
   }
-
-
-  //table  will display based on location selection
-  ngOnChanges(changes: any) {
-    console.log(changes);
-    if (changes && changes.discrepancylocDetail) {
-
-    }
-  }
-
+  /** Check the promote link enable/disable based on checkbox selection */
   checkBoxClicked($event: any) {
     if (this.selection.selected.length > 0 && !$event.checked) {
       this.promoteButtonEnable = true;
@@ -78,20 +69,16 @@ export class IdhConfigResult {
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
-
+  /** Get the config results */
   getIdhConfigResult() {
     this.idhConfigService.getIdhConfigResult("").subscribe((data: any) => {
-      //data = data.filter((el: any) => {
-      //  return el.locid == this.discrepancylocDetail.locId;
-      //})
       console.log(data);
       this.idhConfigResults = data;
-
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     })
   }
-
+  /** Open Filter pop-up. */
   showFilterPopUp() {
     const modalRef = this.dialog.open(IdhFilterDialogComponenet, { panelClass: 'my-dialog', });
     modalRef.componentInstance.dialogValue = this.dialogValue;
@@ -103,7 +90,7 @@ export class IdhConfigResult {
       
     });
   }
-
+  /** Filter config result based on filter selection. */
   filterdataBasedOnSelection(isrefresh: boolean) {
     this.isload = true;
     this.isRefreshClick = false;
@@ -168,7 +155,7 @@ export class IdhConfigResult {
      
     }
   }
-
+  /** Count filter to show to count of filter. */
   countFilter() {
 
     let count = 0;
@@ -207,42 +194,39 @@ export class IdhConfigResult {
     this.filterCount = count;
 
   }
-
+  /** Open the promote dialog. */
   showPromotePopUp() {
 
     const modalRef = this.dialog.open(PromoteDialogComponenet, { panelClass: 'my-dialog', });
     modalRef.componentInstance.promote = this.envType;
   }
-
+  /** Navigate To ViewDetail. */
   navigateToViewDetail(row: any) {
     this.router.navigate(['/configdetail']);
   }
-
+  /** Sorting the config results */
   ngAfterViewInit() {
-
     this.dataSource.sort = this.sort;
   }
-
+  /** Sorting the config results */
   onMatSortChange() {
     this.dataSource.sort = this.sort;
   }
-
+  /**  Get the each cell tool tips */
   getTooltip(column: any, row: any) {
     //return column + ' - ' + row[column];
     return row[column];
   }
-
+  /** Remove the filter chip list */
   removeChip = (data: ItemData): void => {
     this.toggleSelection(data);
     this.isRefreshClick = true;
   };
-
+  /** Refresh the config result after remove the filter */
   refreshResult() {
-    
     this.filterdataBasedOnSelection(true);
-    
   }
-
+  /** Refresh the config result after remove the filter */
   toggleSelection = (data: ItemData): void => {
     data.selected = !data.selected;
     if (data.selected === true) {
