@@ -1,6 +1,7 @@
 .card-text-size {
   font-size: 10pt;
 }
+
 .container > * {
   position: absolute;
   top: 30vh;
@@ -27,36 +28,60 @@
   color: #05a7e9 !important;
   font-weight: bold;
 }
+
 .header-div {
   font-size: 11pt;
   padding-bottom: 2px;
-  font-weight:bold;
+  font-weight: bold;
+}
+.label-header-div {
+  font-size: 11pt;
+  padding-bottom: 2px;
+  font-weight: bold;
+  padding-left:12px;
+}
+.label-content-div {
+  font-size: 11pt;
+  padding-left: 12px;
 }
 .bolder-header-div {
   font-size: 16pt;
   padding-bottom: 2px;
   font-weight: bold;
 }
+
 .content-div {
   font-size: 11pt;
 }
+
 .div-padding {
   padding-top: 20px;
   margin-left: -26px;
 }
+
 .bolder-div-padding {
   padding-top: 20px;
-
 }
- 
+
 .btn-header {
   direction: rtl;
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .delete-btn {
   text-align: left;
   padding-top: 17px;
   margin-left: -33px;
-  cursor:pointer!important;
+  cursor: pointer !important;
+}
+
+.btn-save {
+  background-color: #05a7e9 !important;
+  margin-left: 11px;
+}
+
+.btn-cancel {
+  color: #05a7e9 !important;
+  font-weight: bold;
 }

@@ -3,10 +3,197 @@
   <div class="row bolder-div-padding ">
     <div class="col-sm-9">
       <div class="bolder-header-div">All fields are required.</div>
-      
+
     </div>
   </div>
   <form [formGroup]="configeditForm" (ngSubmit)="onSubmit()">
+
+    <!--Environment Label-->
+    <div class="row div-padding ">
+      <div class="col-sm-3">
+        <div class="label-header-div">Environment</div>
+        <div class="label-content-div">Lorem Ipsum</div>
+      </div>
+      <div class="col-sm-3">
+        <div class="label-header-div">Ingest Bucket</div>
+        <div class="label-content-div">Lorem Ipsum</div>
+
+      </div>
+      <div class="col-sm-3">
+        <div class="label-header-div">Ingest Folder</div>
+        <div class="label-content-div">Lorem Ipsum</div>
+      </div>
+    </div>
+    <!--Config details-->
+    <div class="row div-padding">
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Area</mat-label>
+              <mat-select formControlName="area" (selectionChange)="areaSelection($event.value)">
+                <mat-option value="lorem">Lorem</mat-option>
+                <mat-option value="ipsum">Ipsum</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="subAreaDisplay">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>SubArea</mat-label>
+              <mat-select formControlName="subarea">
+                <mat-option value="lorem">Lorem</mat-option>
+                <mat-option value="ipsum">Ipsum</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>System Code</mat-label>
+              <mat-select formControlName="systemCode">
+                <mat-option value="lorem">Lorem</mat-option>
+                <mat-option value="ipsum">Ipsum</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-6"  >
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Object Code</mat-label>
+              <mat-select formControlName="objectCode">
+                <mat-option value="objectCode1">Object Code1</mat-option>
+                <mat-option value="objectCode2">Object Code2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Resource</mat-label>
+              <mat-select formControlName="resource">
+                <mat-option value="resource1">Resource 1</mat-option>
+                <mat-option value="resource2">Resource 2</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-6">
+
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Ingestion Source</mat-label>
+              <mat-select formControlName="ingestionSource">
+                <mat-option value="table">Table</mat-option>
+                <mat-option value="file">File</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="col-sm-3" *ngIf="ingestionSourceTable">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Database/Schema</mat-label>
+              <mat-select formControlName="retainedVersion">
+                <mat-option value="s3v1">S3-v1</mat-option>
+                <mat-option value="s3v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="ingestionSourceTable">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Table Name</mat-label>
+              <mat-select formControlName="retainedVersion">
+                <mat-option value="s3v1">S3-v1</mat-option>
+                <mat-option value="s3v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-6" *ngIf="!ingestionSourceTable">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Object Name</mat-label>
+              <mat-select formControlName="objectName">
+                <mat-option value="s3v1">S3-v1</mat-option>
+                <mat-option value="s3v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Content Type</mat-label>
+              <mat-select formControlName="contentType">
+                <mat-option value="json">Json</mat-option>
+                <mat-option value="xml">Xml</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-4">
+          <div formGroupName="configBasicSetting">
+
+            <mat-form-field class="container" appearance="outline">
+              <input matInput [matDatepicker]="picker1" formControlName="effectiveDate" placeholder="Effective Date" class="mat-label-text">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field class="container" appearance="outline">
+              <input matInput [matDatepicker]="picker2" formControlName="exipirationDate" placeholder="Exipiration Date" class="mat-label-text">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="label-header-div">Creation Date</div>
+          <div class="label-content-div">01/01/2020</div>
+        </div>
+      </div>
+
+      <div class="row div-padding">
+        <div class="col-sm-6">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Configuration Status</mat-label>
+              <mat-select formControlName="configurationStatus">
+                <mat-option value="active">Active</mat-option>
+                <mat-option value="deactivate">Deactivate</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
     <!--Configuration Options-->
     <div class="row bolder-div-padding">
       <div class="col-sm-6">
@@ -39,7 +226,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row div-padding">
         <div class="col-sm-6">
           <div formGroupName="configurationOption">
@@ -290,12 +477,11 @@
 
       </div>
     </div>
-
-
-    <button type="submit" class="btn btn-success">Submit</button>
-
+    <div class="row div-padding">
+      <div class="col-sm-1">  <button mat-raised-button color="primary" type="submit" class="btn-save">SAVE</button></div>
+      <div class="col-sm-1">   <button mat-button color="primary" class="btn-cancel">CANCEL</button></div>
+    </div>
   </form>
-
   <br />
-  {{this.configeditForm.value | json}}
+  <!--{{this.configeditForm.value | json}}-->
 </div>

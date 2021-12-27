@@ -94,15 +94,7 @@ export class IdhConfigResult {
   filterdataBasedOnSelection(isrefresh: boolean) {
     this.isload = true;
     this.isRefreshClick = false;
-    if (this.dialogValue && this.dialogValue.user) {
-      for (let i = 0; i < this.dialogValue.user.length; i++) {
-        const filterValue = this.dialogValue.user[i];
-        this.dataSource.filter = filterValue.trim().toLowerCase();
-        if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
-          break;
-        }
-      }
-    }
+    
     if (this.dialogValue && this.dialogValue.area) {
       const filterValue = this.dialogValue.area;
       this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -150,6 +142,19 @@ export class IdhConfigResult {
       return;
        
     }
+    if (this.dialogValue && this.dialogValue.user) {
+      if (this.dialogValue.user.length == 0) {
+        this.dataSource.filter = "";
+        return;
+      }
+      for (let i = 0; i < this.dialogValue.user.length; i++) {
+        const filterValue = this.dialogValue.user[i];
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+        if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+          break;
+        }
+      }
+    }
     if (this.dataSource.filteredData && this.dataSource.filteredData.length == 0) {
       this.isload = false;
      
@@ -186,7 +191,7 @@ export class IdhConfigResult {
       data = { "item": "<FILTER 1 System Code>", "selected": true };
       this.selectData.push(data);
     }
-    if (this.dialogValue && this.dialogValue.user) {
+    if (this.dialogValue && this.dialogValue.user && this.dialogValue.user.length>0) {
       count += 1;
       data = { "item": "<FILTER 1 User>", "selected": true };
       this.selectData.push(data);

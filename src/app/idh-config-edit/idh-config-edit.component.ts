@@ -9,14 +9,19 @@ import { FormBuilder, FormGroup, FormArray, AbstractControl } from '@angular/for
 export class IdhConfigEditComponent implements OnInit {
   idhConfig = 'Angular';
   ingestDisplay: any;
+  subAreaDisplay: any;
   configeditForm: FormGroup;
-
+  ingestionSourceTable:any;
   constructor(private fb: FormBuilder) {
-
+    let date = new Date();
+    date.setDate(date.getDate() + 30);
+    // add a day
+   
     this.configeditForm = this.fb.group({
       idhConfig: '',
       errorHandling: '',
-      configurationOption: this.fb.group({ ingestTaxonomy: '',copyToSource:'',dataLoadType:'',retainedVersion:'',escalationLevel:'priority1', }),
+      configurationOption: this.fb.group({ ingestTaxonomy: '', copyToSource: '', dataLoadType: '', retainedVersion: '', escalationLevel: 'priority1' }),
+      configBasicSetting: this.fb.group({ area:'', subarea:'',systemCode: '', objectCode:'', resource:'', ingestionSource :'table',objectName:'',contentType:'json', effectiveDate: new Date(), exipirationDate: date ,configurationStatus: 'active' }),
       projectDetail: this.fb.array([]),
       copyToLowerEnv: this.fb.array([]),
       activeBatch: this.fb.array([]),
@@ -29,6 +34,13 @@ export class IdhConfigEditComponent implements OnInit {
     this.copyToLowerEnv().push(this.newCopyToLowerEnv());
     this.activeBatch().push(this.newActiveBatch());
     this.vendTopic().push(this.newVendTopic());
+    this.checkControlsDisplay();
+  }
+
+  checkControlsDisplay() {
+    let val = this.configeditForm.get("configBasicSetting")?.value;
+    this.ingestionSourceTable=val.ingestionSource=='table'
+    this.subAreaDisplay = val.area != "";
   }
   /** activeBatch */
   activeBatch(): FormArray {
@@ -113,11 +125,15 @@ export class IdhConfigEditComponent implements OnInit {
   removeCopyToLowerEnv(i: number) {
     this.copyToLowerEnv().removeAt(i);
   }
-  /** Copy To LowerEnv */
+  /** ingestion Change */
   ingestChange(value: any) {
     this.ingestDisplay = value == 'no';
   }
-
+  /** Area change */
+  areaSelection(value: any) {
+    this.subAreaDisplay = value != '';
+  }
+  
   onSubmit() {
     console.log(this.configeditForm.value);
   }
