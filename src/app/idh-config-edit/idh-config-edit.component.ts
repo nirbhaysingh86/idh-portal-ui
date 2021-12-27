@@ -15,16 +15,21 @@ export class IdhConfigEditComponent implements OnInit {
 
     this.configeditForm = this.fb.group({
       idhConfig: '',
+      errorHandling:'',
+      projectDetail: this.fb.array([]),
+      copyToLowerEnv: this.fb.array([]),
       activeBatch: this.fb.array([]),
       vendTopic: this.fb.array([]),
     });
   }
 
   ngOnInit() {
+    this.projectDetail().push(this.newProjectDetail());
+    this.copyToLowerEnv().push(this.newCopyToLowerEnv());
     this.activeBatch().push(this.newActiveBatch());
     this.vendTopic().push(this.newVendTopic());
   }
-
+  /** activeBatch */
   activeBatch(): FormArray {
     return this.configeditForm.get("activeBatch") as FormArray
   }
@@ -36,8 +41,6 @@ export class IdhConfigEditComponent implements OnInit {
     })
   }
 
-  
-
   addActiveBatch() {
     this.activeBatch().push(this.newActiveBatch());
   }
@@ -46,7 +49,7 @@ export class IdhConfigEditComponent implements OnInit {
     this.activeBatch().removeAt(i);
   }
 
-
+  /** VendTopic */
   newVendTopic(): FormGroup {
     return this.fb.group({
       name: '',
@@ -65,9 +68,50 @@ export class IdhConfigEditComponent implements OnInit {
   }
 
   removeVendTopic(i: number) {
-    this.activeBatch().removeAt(i);
+    this.vendTopic().removeAt(i);
   }
-   
+
+  /** projectDetail */
+  newProjectDetail(): FormGroup {
+    return this.fb.group({
+      keyword: '',
+      value: '',
+      
+    })
+  }
+
+  projectDetail(): FormArray {
+    return this.configeditForm.get("projectDetail") as FormArray
+  }
+
+  addProjectDetail() {
+    this.projectDetail().push(this.newProjectDetail());
+  }
+
+  removeProjectDetail(i: number) {
+    this.projectDetail().removeAt(i);
+  }
+
+  /** Copy To LowerEnv */
+  newCopyToLowerEnv(): FormGroup {
+    return this.fb.group({
+      sequence: '',
+      sourceEnv: '',
+      targetEnv:''
+    })
+  }
+
+  copyToLowerEnv(): FormArray {
+    return this.configeditForm.get("copyToLowerEnv") as FormArray
+  }
+
+  addCopyToLowerEnv() {
+    this.copyToLowerEnv().push(this.newCopyToLowerEnv());
+  }
+
+  removeCopyToLowerEnv(i: number) {
+    this.copyToLowerEnv().removeAt(i);
+  }
   
   onSubmit() {
     console.log(this.configeditForm.value);
