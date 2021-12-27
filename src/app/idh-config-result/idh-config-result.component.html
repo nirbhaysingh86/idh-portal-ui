@@ -14,7 +14,7 @@
     </div>
   </div>
 </div>
-<div class="table-padding" *ngIf="isload">
+<div class="table-padding" *ngIf="isload &&  dataSource.data.length>0">
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
       <!-- Checkbox Column -->
@@ -126,4 +126,7 @@
   </div>
 
 
+</div>
+<div *ngIf="this.dataSource.data.length==0">
+  <div class="no-results-found">No Results Found</div> 
 </div>
