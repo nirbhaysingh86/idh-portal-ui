@@ -12,12 +12,9 @@ export class IdhSearchComponent implements OnInit {
 
   selected: string | undefined;
 
-  currencies = [
-    { value: 'us', text: 'U.S. Dollar $' },
-    { value: 'euro', text: 'Euro €' },
-    { value: 'yen', text: 'Japanese Yen ¥' },
-    { value: 'pound', text: 'Pounds £' },
-    { value: 'inr', text: 'Indian Rupee ₹' }
+  idhserach = [
+    { value: 'Lorem', text: 'Lorem' },
+    { value: 'Ipsum', text: 'Ipsum' }
   ];
   areadata: any;
 

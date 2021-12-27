@@ -15,8 +15,8 @@
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">SubArea</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of currencies" [value]="food.value">
-              {{food.text}}
+            <mat-option *ngFor="let subarea of idhserach" [value]="subarea.value">
+              {{subarea.text}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -28,8 +28,8 @@
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">System Code</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of currencies" [value]="food.value">
-              {{food.text}}
+            <mat-option *ngFor="let systemCode of idhserach" [value]="systemCode.value">
+              {{systemCode.text}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -38,8 +38,8 @@
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">Object Code</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of currencies" [value]="food.value">
-              {{food.text}}
+            <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
+              {{idhsearch.text}}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -51,8 +51,8 @@
         <mat-form-field  appearance="outline" class="container">
           <mat-label class="mat-label-text">Resource Name</mat-label>
           <mat-select>
-            <mat-option *ngFor="let food of currencies" [value]="food.value">
-              {{food.text}}
+            <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
+              {{idhsearch.text}}
             </mat-option>
           </mat-select>
         </mat-form-field>
