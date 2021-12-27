@@ -29,10 +29,9 @@
 
         <mat-cell *matCellDef="let row">
           <mat-checkbox (click)="$event.stopPropagation()"
-                    (change)="$event ? selection.toggle(row) : null;checkBoxClicked($event)"
-                    [checked]="selection.isSelected(row)"
-                    [aria-label]="checkboxLabel(row)"
-                         >
+                        (change)="$event ? selection.toggle(row) : null;checkBoxClicked($event)"
+                        [checked]="selection.isSelected(row)"
+                        [aria-label]="checkboxLabel(row)">
           </mat-checkbox>
         </mat-cell>
       </ng-container>
@@ -93,7 +92,8 @@
   </div>
 </div>
 <!-- No matches found, remove some filters and refresh your results-->
-<div *ngIf="!isload">
+
+<div *ngIf="!isload && dataSource.data.length>0">
   <div class="col-sm-12">
     <div class="no-result-div"> <mat-icon class="error-outline-icon">error_outline</mat-icon> </div>
   </div>
@@ -121,6 +121,6 @@
   </div>
 </div>
 <!--No Results Found-->
-<div *ngIf="this.dataSource.data.length==0">
+<div *ngIf="dataSource.data.length==0">
   <div class="no-results-found">No Results Found</div>
 </div>

@@ -37,6 +37,8 @@ export class IdhConfigResult {
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
     if (this.router && this.router.getCurrentNavigation()) {
       this.envType = this.router.getCurrentNavigation()?.extras.state;
+      this.dialogValue = this.router.getCurrentNavigation()?.extras.state;
+      
     }
     this.isload = true;
   }
@@ -76,6 +78,8 @@ export class IdhConfigResult {
       this.idhConfigResults = data;
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+      this.countFilter();
+      this.filterdataBasedOnSelection(false);
     })
   }
   /** Open Filter pop-up. */

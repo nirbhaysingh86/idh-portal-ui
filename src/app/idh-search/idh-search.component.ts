@@ -40,7 +40,7 @@ export class IdhSearchComponent implements OnInit {
   }
   /** Search config based on search category */
   searchConfig() {
-    this.router.navigate(['configresult'], { state: { objectCode: this.selectedObjectCode, resourceName: this.selectedResourceName, systemCode: this.selectedSystemCode, subArea: this.selectedSubArea, area: this.selectedArea } });
+    this.router.navigate(['configresult'], { state: { selectedEnvType: 'Dev', objectCode: this.selectedObjectCode, resourceName: this.selectedResourceName, systemCode: this.selectedSystemCode, subArea: this.selectedSubArea, area: this.selectedArea } });
     
   }
 

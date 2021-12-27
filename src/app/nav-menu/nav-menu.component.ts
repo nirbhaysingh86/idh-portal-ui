@@ -19,6 +19,7 @@ export class NavMenuComponent {
     this.getIdhConfigResult();
     this.selectedrouterText = 'Search';
     this.envType = 'DEV';
+    this.router.navigate(['configsearch'], { state: { selectedEnvType: this.envType } });
   }
 
   getIdhConfigResult() {
