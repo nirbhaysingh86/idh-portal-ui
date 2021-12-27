@@ -57,7 +57,7 @@ export class IdhConfigResult {
   }
 
   checkBoxClicked($event: any) {
-    if (this.selection.selected.length > 1 && !$event.checked) {
+    if (this.selection.selected.length > 0 && !$event.checked) {
       this.promoteButtonEnable = true;
     } else {
       this.promoteButtonEnable = $event.checked;
