@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+ 
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { IdhFilterDialogComponenet } from './idh-filter-option-dialog/idh-filter
 import { IdhConfigResult } from './idh-config-result/idh-config-result.component';
 import { IdhConfigDetailComponent } from './idh-config-detail/idh-config-detail.component';
 import { IdhConfigEditComponent } from './idh-config-edit/idh-config-edit.component';
-
+ 
 import { PromoteDialogComponenet } from './promote-dialog/promote-dialog.component';
 import { ChartsModule } from 'ng2-charts';
 import { IdhSearchComponent } from './idh-search/idh-search.component';

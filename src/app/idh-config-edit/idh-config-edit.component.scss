@@ -42,9 +42,11 @@
 }
 .div-padding {
   padding-top: 20px;
+  margin-left: -26px;
 }
 .bolder-div-padding {
   padding-top: 40px;
+
 }
 .new-config-link {
   color: #7fd2f3;
@@ -56,4 +58,9 @@
   direction: rtl;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.delete-btn {
+  text-align: left;
+  padding-top: 17px;
+  margin-left: -33px;
 }

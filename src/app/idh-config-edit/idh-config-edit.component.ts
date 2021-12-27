@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
-import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
-
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormArray, AbstractControl } from '@angular/forms';
 @Component({
   selector: 'app-idh-edit',
   templateUrl: './idh-config-edit.component.html',
@@ -8,42 +7,69 @@ import { HttpClientIdhConfigService } from '../services/http-client-idh-config.s
 })
 
 export class IdhConfigEditComponent implements OnInit {
+  idhConfig = 'Angular';
 
+  configeditForm: FormGroup;
 
-  selected: string | undefined;
+  constructor(private fb: FormBuilder) {
 
-  idhProjectList = [
-    { value: 'Lorem ipsum', keyword: 'Lorem ipsum' },
-    { value: 'Lorem ipsum', keyword: 'Lorem ipsum' } 
-  ];
-  iddActiveBatchList = [
-    { planName: 'Lorem ipsum', status: 'Lorem ipsum' },
-    { planName: 'Lorem ipsum', status: 'Lorem ipsum' }
-  ];
-  idhEnvironmentsList = [
-    { sequence: 'Lorem ipsum', sourceEnv: 'Lorem ipsum', targetEnv: 'Lorem ipsum' },
-    { sequence: 'Lorem ipsum', sourceEnv: 'Lorem ipsum', targetEnv: 'Lorem ipsum' }
-  ];
-  idhVendList = [
-    { name: 'Lorem ipsum',endpointAddress: 'Lorem ipsum', status: 'Lorem ipsum', directlyVendPayload: 'Lorem ipsum' },
-    { name: 'Lorem ipsum',endpointAddress: 'Lorem ipsum', status: 'Lorem ipsum', directlyVendPayload: 'Lorem ipsum' }
-  ];
- areadata: any;
-
-  constructor(private idhConfigService: HttpClientIdhConfigService) {
-
+    this.configeditForm = this.fb.group({
+      idhConfig: '',
+      activeBatch: this.fb.array([]),
+      vendTopic: this.fb.array([]),
+    });
   }
 
   ngOnInit() {
-    this.getArea();
-
+    this.activeBatch().push(this.newActiveBatch());
+    this.vendTopic().push(this.newVendTopic());
   }
 
-  getArea() {
-    this.idhConfigService.getArea().subscribe((data: any) => {
-      console.log(data);
-      this.areadata = data;
+  activeBatch(): FormArray {
+    return this.configeditForm.get("activeBatch") as FormArray
+  }
+
+  newActiveBatch(): FormGroup {
+    return this.fb.group({
+      planName: '',
+      status: '',
     })
   }
 
+  
+
+  addActiveBatch() {
+    this.activeBatch().push(this.newActiveBatch());
+  }
+
+  removeActiveBatch(i: number) {
+    this.activeBatch().removeAt(i);
+  }
+
+
+  newVendTopic(): FormGroup {
+    return this.fb.group({
+      name: '',
+      endpoints: '',
+      status:'',
+      directlyVendPayload:''
+    })
+  }
+
+  vendTopic(): FormArray {
+    return this.configeditForm.get("vendTopic") as FormArray
+  }
+
+  addVendTopic() {
+    this.vendTopic().push(this.newVendTopic());
+  }
+
+  removeVendTopic(i: number) {
+    this.activeBatch().removeAt(i);
+  }
+   
+  
+  onSubmit() {
+    console.log(this.configeditForm.value);
+  }
 }

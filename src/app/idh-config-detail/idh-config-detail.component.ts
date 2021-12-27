@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 
 @Component({
@@ -30,7 +31,7 @@ export class IdhConfigDetailComponent implements OnInit {
   ];
  areadata: any;
 
-  constructor(private idhConfigService: HttpClientIdhConfigService) {
+  constructor(private idhConfigService: HttpClientIdhConfigService, private router: Router) {
 
   }
 
@@ -44,6 +45,10 @@ export class IdhConfigDetailComponent implements OnInit {
       console.log(data);
       this.areadata = data;
     })
+  }
+
+  configEdit() {
+    this.router.navigate(['configedit']);
   }
 
 }
