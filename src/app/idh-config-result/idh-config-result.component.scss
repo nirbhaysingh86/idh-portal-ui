@@ -72,3 +72,16 @@ table {
   cursor: pointer;
   padding-right: 10px;
 }
+.no-result-div {
+  text-align: center;
+  font-size: 15pt;
+  color: silver;
+  padding-top: 54px;
+}
+.error-outline-icon {
+  transform: scale(2);
+}
+.enable-refresh {
+  color: #05a7e9 !important;
+  cursor:pointer!important;
+}

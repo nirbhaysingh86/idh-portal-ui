@@ -9,6 +9,7 @@ import { IdhFilterDialogComponenet } from '../idh-filter-option-dialog/idh-filte
 import { SelectionModel } from '@angular/cdk/collections';
 import { Router } from '@angular/router';
 import { PromoteDialogComponenet } from '../promote-dialog/promote-dialog.component';
+import { ItemData } from '../models/multi-select-item-data';
 
 @Component({
   selector: 'app-idh-config-result',
@@ -29,17 +30,23 @@ export class IdhConfigResult {
   envType: any;
   dialogValue: any;
   filterCount: any;
+  selectData: Array<any> = [];
+  isload: any;
+  isRefreshClick: any;
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
     if (this.router && this.router.getCurrentNavigation()) {
       this.envType = this.router.getCurrentNavigation()?.extras.state;
     }
+    this.isload = true;
   }
 
   ngOnInit() {
     this.getIdhConfigResult();
     this.filterCount = 0;
+    
   }
+
 
   //table  will display based on location selection
   ngOnChanges(changes: any) {
@@ -48,6 +55,7 @@ export class IdhConfigResult {
 
     }
   }
+
   checkBoxClicked($event: any) {
     if (this.selection.selected.length > 1 && !$event.checked) {
       this.promoteButtonEnable = true;
@@ -91,12 +99,14 @@ export class IdhConfigResult {
       console.log('The dialog was closed', result);
       this.dialogValue = result;
       this.countFilter();
-      this.filterdataBasedOnSelection();
-
+      this.filterdataBasedOnSelection(false);
+      
     });
   }
 
-  filterdataBasedOnSelection() {
+  filterdataBasedOnSelection(isrefresh: boolean) {
+    this.isload = true;
+    this.isRefreshClick = false;
     if (this.dialogValue && this.dialogValue.user) {
       for (let i = 0; i < this.dialogValue.user.length; i++) {
         const filterValue = this.dialogValue.user[i];
@@ -148,28 +158,51 @@ export class IdhConfigResult {
         return;
       }
     }
+    if (isrefresh && this.selectData && this.selectData.length == 0) {
+      this.dataSource.filter = "";
+      return;
+       
+    }
+    if (this.dataSource.filteredData && this.dataSource.filteredData.length == 0) {
+      this.isload = false;
+     
+    }
   }
 
   countFilter() {
 
     let count = 0;
+    this.selectData = [];
+    let data = {  };
     if (this.dialogValue && this.dialogValue.area) {
       count += 1;
+      data = { "item": "<FILTER 1 Area>", "selected": true };
+      this.selectData.push(data);
     }
     if (this.dialogValue && this.dialogValue.objectCode) {
       count += 1;
+      data = { "item": "<FILTER 1 Object Code>", "selected": true };
+      this.selectData.push(data);
     }
     if (this.dialogValue && this.dialogValue.resourceName) {
       count += 1;
+      data = { "item": "<FILTER 1 Resource Name>", "selected": true };
+      this.selectData.push(data);
     }
     if (this.dialogValue && this.dialogValue.subArea) {
       count += 1;
+      data = { "item": "<FILTER 1 SubArea>", "selected": true };
+      this.selectData.push(data);
     }
     if (this.dialogValue && this.dialogValue.systemCode) {
       count += 1;
+      data = { "item": "<FILTER 1 System Code>", "selected": true };
+      this.selectData.push(data);
     }
     if (this.dialogValue && this.dialogValue.user) {
       count += 1;
+      data = { "item": "<FILTER 1 User>", "selected": true };
+      this.selectData.push(data);
     }
     this.filterCount = count;
 
@@ -199,4 +232,24 @@ export class IdhConfigResult {
     return row[column];
   }
 
+  removeChip = (data: ItemData): void => {
+    this.toggleSelection(data);
+    this.isRefreshClick = true;
+  };
+
+  refreshResult() {
+    
+    this.filterdataBasedOnSelection(true);
+    
+  }
+
+  toggleSelection = (data: ItemData): void => {
+    data.selected = !data.selected;
+    if (data.selected === true) {
+      this.selectData.push(data);
+    } else {
+      const i = this.selectData.findIndex(value => value.item === data.item);
+      this.selectData.splice(i, 1);
+    }
+  };
 }
