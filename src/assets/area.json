@@ -1,20 +1,16 @@
 [
   {
-    "areaId": 1,
+    "areaId": "Lorem",
     "subjectAreaName": "Lorem"
-     
+
   },
   {
-    "areaId": 2,
+    "areaId": "Mumbai",
     "subjectAreaName": "Mumbai"
   },
   {
-    "areaId": 3,
+    "areaId": "Patna",
     "subjectAreaName": "Patna"
-  },
-  {
-    "areaId": 4,
-    "subjectAreaName": "Jordan"
-  }
+  } 
 
 ]

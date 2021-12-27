@@ -4,7 +4,7 @@
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">Area</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedArea">
             <mat-option *ngFor="let area of areadata" [value]="area.areaId">
               {{area.subjectAreaName}}
             </mat-option>
@@ -14,7 +14,7 @@
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">SubArea</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedSubArea">
             <mat-option *ngFor="let subarea of idhserach" [value]="subarea.value">
               {{subarea.text}}
             </mat-option>
@@ -27,7 +27,7 @@
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">System Code</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedSystemCode">
             <mat-option *ngFor="let systemCode of idhserach" [value]="systemCode.value">
               {{systemCode.text}}
             </mat-option>
@@ -37,7 +37,7 @@
       <div class="col-sm-6">
         <mat-form-field appearance="outline" class="container">
           <mat-label class="mat-label-text">Object Code</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedObjectCode">
             <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
               {{idhsearch.text}}
             </mat-option>
@@ -50,7 +50,7 @@
       <div class="col-sm-6">
         <mat-form-field  appearance="outline" class="container">
           <mat-label class="mat-label-text">Resource Name</mat-label>
-          <mat-select>
+          <mat-select [(ngModel)]="selectedResourceName">
             <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
               {{idhsearch.text}}
             </mat-option>
@@ -66,7 +66,7 @@
       </div>
     </div>
     <div class="row search-padding">
-      <div class="col-sm-1">  <button mat-raised-button color="primary" class="btn-search">SEARCH</button></div>
+      <div class="col-sm-1">  <button mat-raised-button color="primary" class="btn-search" (click)="searchConfig()">SEARCH</button></div>
       <div class="col-sm-1">   <button mat-button color="primary" class="btn-clear">CLEAR</button></div>
 
     </div>

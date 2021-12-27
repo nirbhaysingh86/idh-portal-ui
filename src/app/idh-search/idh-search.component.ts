@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClientIdhConfigService } from '../services/http-client-idh-config.service';
 
 @Component({
@@ -9,7 +10,11 @@ import { HttpClientIdhConfigService } from '../services/http-client-idh-config.s
 
 export class IdhSearchComponent implements OnInit {
 
-
+  selectedArea: any;
+  selectedSubArea: any;
+  selectedSystemCode: any;
+  selectedResourceName: any;
+  selectedObjectCode: any;
   selected: string | undefined;
 
   idhserach = [
@@ -18,7 +23,7 @@ export class IdhSearchComponent implements OnInit {
   ];
   areadata: any;
 
-  constructor(private idhConfigService: HttpClientIdhConfigService) {
+  constructor(private idhConfigService: HttpClientIdhConfigService, private router: Router) {
 
   }
 
@@ -32,6 +37,11 @@ export class IdhSearchComponent implements OnInit {
       console.log(data);
       this.areadata = data;
     })
+  }
+  /** Search config based on search category */
+  searchConfig() {
+    this.router.navigate(['configresult'], { state: { objectCode: this.selectedObjectCode, resourceName: this.selectedResourceName, systemCode: this.selectedSystemCode, subArea: this.selectedSubArea, area: this.selectedArea } });
+    
   }
 
 }
