@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-3 ">
         <div class="search-results">Search Results</div>
-        <div>{{idhConfigResults.length==1?idhConfigResults.length+' Result':idhConfigResults.length+' Results'}} </div>
+        <div>{{dataSource.filteredData.length==1?1+' Result':dataSource.filteredData.length+' Results'}} </div>
       </div>
 
       <div class="col-sm-9 direction-right">
@@ -109,7 +109,7 @@
         <mat-chip-list #chipList>
           <ng-container *ngFor="let select of selectData">
             <mat-chip class="cardinal-colors" (click)="removeChip(select)">
-              <mat-icon class="mat-chip-remove ">cancel</mat-icon> {{ select.item }}
+              <mat-icon class="mat-chip-remove ">cancel</mat-icon><div class="mat-chip-text">{{ select.item }}</div> 
               
             </mat-chip>
           </ng-container>
