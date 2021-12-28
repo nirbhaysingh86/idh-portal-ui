@@ -53,7 +53,7 @@ import { BreadcrumbMmenuComponent } from './shared/breadcrumb-menu/breadcrumb-me
       { path: 'configresult', component: IdhConfigResult },
       { path: 'configdetail', component: IdhConfigDetailComponent },
       { path: 'configedit', component: IdhConfigEditComponent },
-    ]), BrowserAnimationsModule
+    ] ), BrowserAnimationsModule
   ], 
   providers: [],
   bootstrap: [AppComponent]
