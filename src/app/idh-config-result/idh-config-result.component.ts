@@ -42,6 +42,7 @@ export class IdhConfigResult {
       this.setBreadcrumbMenuatext = 'Results';
     }
     this.isload = true;
+    this.dataSource.paginator = this.paginator;
   }
 
   ngOnInit() {
@@ -217,6 +218,7 @@ export class IdhConfigResult {
   /** Sorting the config results */
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
   /** Sorting the config results */
   onMatSortChange() {

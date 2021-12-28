@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
   <div class="row intial-row-padding">
     <div class="col-sm-6">
       <nav aria-label="breadcrumb">
@@ -9,13 +8,10 @@
                (click)="getSelectedMenu(breadmenu.routerText,breadmenu.routerLink)">{{breadmenu.routerText}}</a>
           </div>
         </div>
-
       </nav>
     </div>
-
     <span>CONFIGURATION</span>
-    <h1>{{selectedrouterText}}</h1>
-
+    <h2>{{selectedrouterText}}</h2>
     <div>
       Find specific configuration or create a  <a mat-button routerLink="." class="new-config-link" appearance="outline">NEW CONFIGURATION</a>
     </div>
