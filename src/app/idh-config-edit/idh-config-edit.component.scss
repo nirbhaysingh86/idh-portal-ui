@@ -1,12 +1,7 @@
 .card-text-size {
   font-size: 10pt;
 }
-
-.container > * {
-  position: absolute;
-  top: 30vh;
-  left: 30vw;
-}
+ 
 
 .mat-label-text {
   font-size: 13pt !important;
@@ -48,20 +43,14 @@
   font-size: 16pt;
   padding-bottom: 2px;
   font-weight: bold;
+  padding-left: 11px;
 }
 
 .content-div {
   font-size: 11pt;
+  padding-left: 12px;
 }
-
-.div-padding {
-  padding-top: 20px;
-  margin-left: -26px;
-}
-
-.bolder-div-padding {
-  padding-top: 20px;
-}
+ 
 
 .btn-header {
   direction: rtl;
@@ -84,4 +73,9 @@
 .btn-cancel {
   color: #05a7e9 !important;
   font-weight: bold;
+}
+.intial-edit-row-padding {
+  padding-left: 36px !important;
+  padding-right: 10px !important;
+  padding-top: 20px !important;
 }

@@ -11,8 +11,11 @@ body {
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~bootstrap/dist/css/bootstrap.css";
- 
 
+.card-text-size {
+  font-size: 10pt;
+  margin-top: 10px;
+}
 .mat-select-panel {
   position: absolute;
   top: 32px;
@@ -99,4 +102,15 @@ body {
   border: 1px solid rgb(221, 211, 205) !important;
   margin-left: 10px!important;
     
+}
+.intial-row-padding {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 20px !important;
+}
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  padding-left: 14px!important;
 }

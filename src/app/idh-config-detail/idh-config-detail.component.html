@@ -1,279 +1,280 @@
 <breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"></breadcrumb-menu>
- <div class="row btn-header">
-   <div class="col-sm-12">
-     <div>
-       <a mat-button routerLink="." class="new-config-link" appearance="outline">PROMOTE</a>
-       <a mat-button routerLink="." class="new-config-link" appearance="outline">COPY</a>
-       <a mat-button class="new-config-link" appearance="outline" (click)="configEdit()">EDIT</a>
-     </div>
-   </div>
-</div>
+<div class="intial-row-padding">
+  <div class="row btn-header">
+    <div class="col-sm-12">
+      <div>
+        <a mat-button routerLink="." class="new-config-link" appearance="outline">PROMOTE</a>
+        <a mat-button routerLink="." class="new-config-link" appearance="outline">COPY</a>
+        <a mat-button class="new-config-link" appearance="outline" (click)="configEdit()">EDIT</a>
+      </div>
+    </div>
+  </div>
 
-<div class="card card-text-size">
-  <div class="card-body">
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Environment</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Ingest Bucket</div>
-        <div class="content-div">Lorem Ipsum</div>
+  <div class="card card-text-size">
+    <div class="card-body">
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Environment</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Ingest Bucket</div>
+          <div class="content-div">Lorem Ipsum</div>
 
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Ingest Folder</div>
-        <div class="content-div">Lorem Ipsum</div>
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Ingest Folder</div>
+          <div class="content-div">Lorem Ipsum</div>
 
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Area</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">SubArea</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">System Code</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Object Code</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Resource</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Ingest Source</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Database/Schema</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Table Name</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Object Name</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Content Type</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Effective Date</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-      <div class="col-sm-4">
-        <div class="header-div">Expiration Date</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-      <div class="col-sm-3">
-        <div class="header-div">Creation Date</div>
-        <div class="content-div">Lorem Ipsum</div>
-
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Configuration Status</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-    <!--Configuration Options-->
-    <div class="row bolder-div-padding">
-      <div class="col-sm-6">
-        <div class="bolder-header-div">Configuration Options</div>
-        <div class="content-div">Define how this ingestion configuration should be processed in IDH.</div>
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Ingest to S3</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-    <div class="row div-padding " *ngIf="true">
-      <div class="col-sm-3">
-        <div class="header-div">Copy to Source</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Data Load Type</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-      <div class="col-sm-3" *ngIf="true">
-        <div class="header-div">Number Of Retained Versions</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Service Escalation Level</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-    <!--Error Handling-->
-    <div class="row bolder-div-padding ">
-      <div class="col-sm-6">
-        <div class="bolder-header-div">Error Handling</div>
-        <div class="content-div">Define how to handle errors associated with this ingestion configuration.</div>
-      </div>
-    </div>
-    <div class="row div-padding ">
-      <div class="col-sm-3">
-        <div class="header-div">Error Handling Event</div>
-        <div class="content-div">Lorem Ipsum</div>
-      </div>
-    </div>
-    <!--Project Details-->
-    <div class="row bolder-div-padding ">
-      <div class="col-sm-6">
-        <div class="bolder-header-div">Project Details</div>
-        <div class="content-div">Define project metadata and other tags associated with this ingestion configuration.</div>
-      </div>
-    </div>
-    <div class="row div-padding">
-      <div class="col-sm-12">
-        <div class="table-responsive-md">
-          <table class="table table-bordered text-align">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Keyword</th>
-                <th scope="col">Value</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let idhproject of idhProjectList">
-                <td>{{idhproject.keyword}}</td>
-                <td>{{idhproject.value}}</td>
-
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
-    </div>
-    <!--Copy to  Lower Environments-->
-    <div class="row bolder-div-padding ">
-      <div class="col-sm-9">
-        <div class="bolder-header-div">Copy to  Lower Environments</div>
-        <div class="content-div">Determine if data should be copied down from higher environments.Data cannot be copied to the development environment.</div>
-      </div>
-    </div>
-    <div class="row div-padding">
-      <div class="col-sm-12">
-        <div class="table-responsive-md">
-          <table class="table table-bordered text-align">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Sequence</th>
-                <th scope="col">Source Environment</th>
-                <th scope="col">Target Environment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let idhEnv of idhEnvironmentsList">
-                <td>{{idhEnv.sequence}}</td>
-                <td>{{idhEnv.sourceEnv}}</td>
-                <td>{{idhEnv.targetEnv}}</td>
-              </tr>
-            </tbody>
-          </table>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Area</div>
+          <div class="content-div">Lorem Ipsum</div>
         </div>
-      </div>
-    </div>
-    <!--Vend topics-->
-    <div class="row bolder-div-padding ">
-      <div class="col-sm-9">
-        <div class="bolder-header-div">Vend Topics</div>
-        <div class="content-div">Define how to vend data after the ingesation event from SNS,SQS, or a Kafka request.</div>
-      </div>
-    </div>
-    <div class="row div-padding">
-      <div class="col-sm-12">
-        <div class="table-responsive-md">
-          <table class="table table-bordered text-align">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Endpoint Address</th>
-                <th scope="col">Status</th>
-                <th scope="col">Directly Vend Payload</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let idhVend of idhVendList">
-                <td>{{idhVend.name}}</td>
-                <td>{{idhVend.endpointAddress}}</td>
-                <td>{{idhVend.status}}</td>
-                <td>{{idhVend.directlyVendPayload}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <!--ActiveBatch Pipelines-->
-    <div class="row bolder-div-padding ">
-      <div class="col-sm-12">
-        <div class="bolder-header-div">ActiveBatch Pipelines</div>
-        <div class="content-div">Define the ActiveBatch Plans and IICS/informatica PowerCenter workflows invoked for synchronous data processing after ingestion .</div>
-      </div>
-    </div>
-    <div class="row div-padding">
-      <div class="col-sm-12">
-        <div class="table-responsive-md">
-          <table class="table table-bordered text-align">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Plan Name</th>
-                <th scope="col">Status</th>
+        <div class="col-sm-3">
+          <div class="header-div">SubArea</div>
+          <div class="content-div">Lorem Ipsum</div>
 
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let idhActiveBatch of iddActiveBatchList">
-                <td>{{idhActiveBatch.planName}}</td>
-                <td>{{idhActiveBatch.status}}</td>
+        </div>
 
-              </tr>
-            </tbody>
-          </table>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">System Code</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Object Code</div>
+          <div class="content-div">Lorem Ipsum</div>
+
         </div>
       </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Resource</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Ingest Source</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Database/Schema</div>
+          <div class="content-div">Lorem Ipsum</div>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Table Name</div>
+          <div class="content-div">Lorem Ipsum</div>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Object Name</div>
+          <div class="content-div">Lorem Ipsum</div>
+
+        </div>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Content Type</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Effective Date</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+        <div class="col-sm-4">
+          <div class="header-div">Expiration Date</div>
+          <div class="content-div">Lorem Ipsum</div>
+
+        </div>
+        <div class="col-sm-3">
+          <div class="header-div">Creation Date</div>
+          <div class="content-div">Lorem Ipsum</div>
+
+        </div>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Configuration Status</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+      <!--Configuration Options-->
+      <div class="row bolder-div-padding">
+        <div class="col-sm-6">
+          <div class="bolder-header-div">Configuration Options</div>
+          <div class="content-div">Define how this ingestion configuration should be processed in IDH.</div>
+        </div>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Ingest to S3</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+      <div class="row div-padding " *ngIf="true">
+        <div class="col-sm-3">
+          <div class="header-div">Copy to Source</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Data Load Type</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+        <div class="col-sm-3" *ngIf="true">
+          <div class="header-div">Number Of Retained Versions</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Service Escalation Level</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+      <!--Error Handling-->
+      <div class="row bolder-div-padding ">
+        <div class="col-sm-6">
+          <div class="bolder-header-div">Error Handling</div>
+          <div class="content-div">Define how to handle errors associated with this ingestion configuration.</div>
+        </div>
+      </div>
+      <div class="row div-padding ">
+        <div class="col-sm-3">
+          <div class="header-div">Error Handling Event</div>
+          <div class="content-div">Lorem Ipsum</div>
+        </div>
+      </div>
+      <!--Project Details-->
+      <div class="row bolder-div-padding ">
+        <div class="col-sm-6">
+          <div class="bolder-header-div">Project Details</div>
+          <div class="content-div">Define project metadata and other tags associated with this ingestion configuration.</div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-12">
+          <div class="table-responsive-md">
+            <table class="table table-bordered text-align">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Keyword</th>
+                  <th scope="col">Value</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let idhproject of idhProjectList">
+                  <td>{{idhproject.keyword}}</td>
+                  <td>{{idhproject.value}}</td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--Copy to  Lower Environments-->
+      <div class="row bolder-div-padding ">
+        <div class="col-sm-9">
+          <div class="bolder-header-div">Copy to  Lower Environments</div>
+          <div class="content-div">Determine if data should be copied down from higher environments.Data cannot be copied to the development environment.</div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-12">
+          <div class="table-responsive-md">
+            <table class="table table-bordered text-align">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Sequence</th>
+                  <th scope="col">Source Environment</th>
+                  <th scope="col">Target Environment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let idhEnv of idhEnvironmentsList">
+                  <td>{{idhEnv.sequence}}</td>
+                  <td>{{idhEnv.sourceEnv}}</td>
+                  <td>{{idhEnv.targetEnv}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--Vend topics-->
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="bolder-header-div">Vend Topics</div>
+          <div class="content-div">Define how to vend data after the ingesation event from SNS,SQS, or a Kafka request.</div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-12">
+          <div class="table-responsive-md">
+            <table class="table table-bordered text-align">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Endpoint Address</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Directly Vend Payload</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let idhVend of idhVendList">
+                  <td>{{idhVend.name}}</td>
+                  <td>{{idhVend.endpointAddress}}</td>
+                  <td>{{idhVend.status}}</td>
+                  <td>{{idhVend.directlyVendPayload}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!--ActiveBatch Pipelines-->
+      <div class="row ">
+        <div class="col-sm-12">
+          <div class="bolder-header-div">ActiveBatch Pipelines</div>
+          <div class="content-div">Define the ActiveBatch Plans and IICS/informatica PowerCenter workflows invoked for synchronous data processing after ingestion .</div>
+        </div>
+      </div>
+      <div class="row div-padding">
+        <div class="col-sm-12">
+          <div class="table-responsive-md">
+            <table class="table table-bordered text-align">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Plan Name</th>
+                  <th scope="col">Status</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let idhActiveBatch of iddActiveBatchList">
+                  <td>{{idhActiveBatch.planName}}</td>
+                  <td>{{idhActiveBatch.status}}</td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
-     
   </div>
 </div>
-
