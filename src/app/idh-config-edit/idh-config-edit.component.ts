@@ -22,8 +22,8 @@ export class IdhConfigEditComponent implements OnInit {
     this.configeditForm = this.fb.group({
       idhConfig: '',
       errorHandling: '',
-      configurationOption: this.fb.group({ ingestTaxonomy: '', copyToSource: '', dataLoadType: '', retainedVersion: '', escalationLevel: 'priority1' }),
-      configBasicSetting: this.fb.group({ area:'', subarea:'',systemCode: '', objectCode:'', resource:'', ingestionSource :'table',objectName:'',contentType:'json', effectiveDate: new Date(), exipirationDate: date ,configurationStatus: 'active' }),
+      configurationOption: this.fb.group({ ingestTaxonomy: '', copyToSource: '', dataLoadType: '', retainedVersion: '', escalationLevel: 'Priority 1' }),
+      configBasicSetting: this.fb.group({ area:'', subarea:'',systemCode: '', objectCode:'', resource:'', ingestionSource :'Table',objectName:'',contentType:'Json', effectiveDate: new Date(), exipirationDate: date ,configurationStatus: 'Active' }),
       projectDetail: this.fb.array([]),
       copyToLowerEnv: this.fb.array([]),
       activeBatch: this.fb.array([]),
@@ -70,7 +70,7 @@ export class IdhConfigEditComponent implements OnInit {
       name: '',
       endpoints: '',
       status:'',
-      directlyVendPayload:'no'
+      directlyVendPayload:'No'
     })
   }
 

@@ -134,13 +134,13 @@
         </div>
         <div class="col-sm-3" *ngIf="true">
           <div class="header-div">Number Of Retained Versions</div>
-          <div class="content-div">Lorem Ipsum</div>
+          <div class="content-div">{{idhConfig.configurationOption.retainedVersion}}</div>
         </div>
       </div>
       <div class="row div-padding ">
         <div class="col-sm-3">
           <div class="header-div">Service Escalation Level</div>
-          <div class="content-div">Lorem Ipsum</div>
+          <div class="content-div">{{idhConfig.configurationOption.escalationLevel}}</div>
         </div>
       </div>
       <!--Error Handling-->
@@ -153,7 +153,7 @@
       <div class="row div-padding ">
         <div class="col-sm-3">
           <div class="header-div">Error Handling Event</div>
-          <div class="content-div">Lorem Ipsum</div>
+          <div class="content-div">{{idhConfig.errorHandling}}</div>
         </div>
       </div>
       <!--Project Details-->
@@ -175,7 +175,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let idhproject of idhProjectList">
+                <tr *ngFor="let idhproject of idhConfig.projectDetail">
                   <td>{{idhproject.keyword}}</td>
                   <td>{{idhproject.value}}</td>
 
@@ -204,7 +204,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let idhEnv of idhEnvironmentsList">
+                <tr *ngFor="let idhEnv of idhConfig.copyToLowerEnv">
                   <td>{{idhEnv.sequence}}</td>
                   <td>{{idhEnv.sourceEnv}}</td>
                   <td>{{idhEnv.targetEnv}}</td>
@@ -234,9 +234,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let idhVend of idhVendList">
+                <tr *ngFor="let idhVend of idhConfig.vendTopic">
                   <td>{{idhVend.name}}</td>
-                  <td>{{idhVend.endpointAddress}}</td>
+                  <td>{{idhVend.endpoints}}</td>
                   <td>{{idhVend.status}}</td>
                   <td>{{idhVend.directlyVendPayload}}</td>
                 </tr>
@@ -264,7 +264,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let idhActiveBatch of iddActiveBatchList">
+                <tr *ngFor="let idhActiveBatch of idhConfig.activeBatch">
                   <td>{{idhActiveBatch.planName}}</td>
                   <td>{{idhActiveBatch.status}}</td>
 
