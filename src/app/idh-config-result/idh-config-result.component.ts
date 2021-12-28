@@ -33,12 +33,13 @@ export class IdhConfigResult {
   selectData: Array<any> = [];
   isload: any;
   isRefreshClick: any;
+  setBreadcrumbMenuatext: any;
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
     if (this.router && this.router.getCurrentNavigation()) {
       this.envType = this.router.getCurrentNavigation()?.extras.state;
       this.dialogValue = this.router.getCurrentNavigation()?.extras.state;
-      
+      this.setBreadcrumbMenuatext = 'Results';
     }
     this.isload = true;
   }

@@ -10,7 +10,7 @@ import { HttpClientIdhConfigService } from '../services/http-client-idh-config.s
 
 export class IdhConfigDetailComponent implements OnInit {
 
-
+  setBreadcrumbMenuatext: any;
   selected: string | undefined;
 
   idhProjectList = [
@@ -32,7 +32,7 @@ export class IdhConfigDetailComponent implements OnInit {
  areadata: any;
 
   constructor(private idhConfigService: HttpClientIdhConfigService, private router: Router) {
-
+    this.setBreadcrumbMenuatext = 'Detail';
   }
 
   ngOnInit() {

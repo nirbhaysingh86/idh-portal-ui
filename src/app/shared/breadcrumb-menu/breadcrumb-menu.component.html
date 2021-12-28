@@ -1,0 +1,17 @@
+
+<div class="row header-row">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList ">
+        <a *ngIf="breadmenu.isDisplay" [ngClass]="{'active-breadmenu': breadmenu.routerText != selectedrouterText, 'in-active-breadmenu' : breadmenu.routerText === selectedrouterText }"
+           (click)="getSelectedMenu(breadmenu.routerText,breadmenu.routerLink)" >{{breadmenu.routerText}}</a>
+      </li>
+    </ol>
+
+  </nav>
+  <span>CONFIGURATION</span>
+  <h1>{{selectedrouterText}}</h1>
+  <div class="col-sm-8">
+    Find specific configuration or create a  <a mat-button routerLink="." class="new-config-link" appearance="outline">NEW CONFIGURATION</a>
+  </div>
+</div>

@@ -16,7 +16,8 @@ export class IdhSearchComponent implements OnInit {
   selectedResourceName: any;
   selectedObjectCode: any;
   selected: string | undefined;
-
+  setBreadcrumbMenuatext: any;
+ 
   idhserach = [
     { value: 'Lorem', text: 'Lorem' },
     { value: 'Ipsum', text: 'Ipsum' }
@@ -40,8 +41,9 @@ export class IdhSearchComponent implements OnInit {
   }
   /** Search config based on search category */
   searchConfig() {
+    this.setBreadcrumbMenuatext = 'Search';
     this.router.navigate(['configresult'], { state: { selectedEnvType: 'Dev', objectCode: this.selectedObjectCode, resourceName: this.selectedResourceName, systemCode: this.selectedSystemCode, subArea: this.selectedSubArea, area: this.selectedArea } });
-    
   }
 
+   
 }

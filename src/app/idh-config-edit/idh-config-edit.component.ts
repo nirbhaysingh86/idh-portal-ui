@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, FormArray, AbstractControl } from '@angular/for
 
 export class IdhConfigEditComponent implements OnInit {
   idhConfig = 'Angular';
+  setBreadcrumbMenuatext: any;
   ingestDisplay: any;
   subAreaDisplay: any;
   configeditForm: FormGroup;
@@ -16,7 +17,7 @@ export class IdhConfigEditComponent implements OnInit {
     let date = new Date();
     date.setDate(date.getDate() + 30);
     // add a day
-   
+    this.setBreadcrumbMenuatext = 'configedit';
     this.configeditForm = this.fb.group({
       idhConfig: '',
       errorHandling: '',

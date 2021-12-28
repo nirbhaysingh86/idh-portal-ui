@@ -20,7 +20,7 @@ import { PromoteDialogComponenet } from './promote-dialog/promote-dialog.compone
 import { ChartsModule } from 'ng2-charts';
 import { IdhSearchComponent } from './idh-search/idh-search.component';
 import { MultiselectAutocompleteComponent } from './shared/multiselect-autocomplete/multiselect-autocomplete.component';
-
+import { BreadcrumbMmenuComponent } from './shared/breadcrumb-menu/breadcrumb-menu.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { MultiselectAutocompleteComponent } from './shared/multiselect-autocompl
     PromoteDialogComponenet,
     MultiselectAutocompleteComponent,
     IdhConfigEditComponent,
-    PromoteDialogSuccessComponenet
+    PromoteDialogSuccessComponenet,
+    BreadcrumbMmenuComponent
   ],
   imports: [
     BrowserModule,
