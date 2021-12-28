@@ -1,127 +1,129 @@
 <breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"></breadcrumb-menu>
-<div class="card card-text-size">
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-3 ">
-        <div class="search-results">Search Results</div>
-        <div>{{dataSource.filteredData.length==1?1+' Result':dataSource.filteredData.length+' Results'}} </div>
-      </div>
+<div *ngIf="setBreadcrumbMenuatext">
+  <div class="card card-text-size">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-3 ">
+          <div class="search-results">Search Results</div>
+          <div>{{dataSource.filteredData.length==1?1+' Result':dataSource.filteredData.length+' Results'}} </div>
+        </div>
 
-      <div class="col-sm-9 direction-right">
-        <span class="filter-count">{{this.selectData.length}} </span> <span class="bold-text">Filter</span> <mat-icon class="filter-shape" (click)="showFilterPopUp()">filter_alt</mat-icon>
-        <a mat-button routerLink="." class="new-config-link" appearance="outline" [disabled]="!promoteButtonEnable" (click)="showPromotePopUp()">PROMOTE SELECTED<mat-icon>arrow_upward</mat-icon></a>
+        <div class="col-sm-9 direction-right">
+          <span class="filter-count">{{this.selectData.length}} </span> <span class="bold-text">Filter</span> <mat-icon class="filter-shape" (click)="showFilterPopUp()">filter_alt</mat-icon>
+          <a mat-button routerLink="." class="new-config-link" appearance="outline" [disabled]="!promoteButtonEnable" (click)="showPromotePopUp()">PROMOTE SELECTED<mat-icon>arrow_upward</mat-icon></a>
 
-      </div>
-    </div>
-  </div>
-</div>
-<div class="table-padding" *ngIf="isload &&  dataSource.data.length>0">
-  <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
-      <!-- Checkbox Column -->
-      <ng-container matColumnDef="select">
-        <mat-header-cell *matHeaderCellDef>
-          <!--<mat-checkbox (change)="$event ? masterToggle() : null"
-                        [checked]="selection.hasValue() && isAllSelected()"
-                        [indeterminate]="selection.hasValue() && !isAllSelected()"
-                        [aria-label]="checkboxLabel()">
-          </mat-checkbox>-->
-        </mat-header-cell>
-
-        <mat-cell *matCellDef="let row">
-          <mat-checkbox (click)="$event.stopPropagation()"
-                        (change)="$event ? selection.toggle(row) : null;checkBoxClicked($event)"
-                        [checked]="selection.isSelected(row)"
-                        [aria-label]="checkboxLabel(row)">
-          </mat-checkbox>
-        </mat-cell>
-      </ng-container>
-      <!-- subjectAreaName Column -->
-      <ng-container matColumnDef="subjectAreaName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.subjectAreaName}}"> {{row.subjectAreaName}} </mat-cell>
-      </ng-container>
-
-      <!-- subjectSubAreaName Column -->
-      <ng-container matColumnDef="subjectSubAreaName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> SubArea </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.subjectSubAreaName}}"> {{row.subjectSubAreaName}}</mat-cell>
-      </ng-container>
-
-      <!-- sourceSystemCode Column -->
-      <ng-container matColumnDef="sourceSystemCode">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> System Code </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.sourceSystemCode}}"> {{row.sourceSystemCode}} </mat-cell>
-      </ng-container>
-
-      <!-- objectName Column -->
-      <ng-container matColumnDef="objectName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Object Code </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.objectName}}"> {{row.objectName}} </mat-cell>
-      </ng-container>
-      <!-- resourceName Column -->
-      <ng-container matColumnDef="resourceName">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Resource Name </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.resourceName}}"> {{row.resourceName}} </mat-cell>
-      </ng-container>
-      <!-- user Column -->
-      <ng-container matColumnDef="user">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>User </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.user}}"> {{row.user}} </mat-cell>
-      </ng-container>
-      <!-- lastUpdatedDate Column -->
-      <ng-container matColumnDef="lastUpdatedDate">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltip="{{row.lastUpdatedDate}}"> {{row.lastUpdatedDate}} </mat-cell>
-      </ng-container>
-      <!-- view details Column -->
-      <ng-container matColumnDef="viewdetails">
-        <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let row">
-
-          <a class="view-details" (click)="navigateToViewDetail(row)">view details</a>
-        </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
-    </table>
-    <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5,10,25,50,100]" (page)="pageEvent = $event"
-                   aria-label="Select page">
-    </mat-paginator>
-  </div>
-</div>
-<!-- No matches found, remove some filters and refresh your results-->
-
-<div *ngIf="!isload && dataSource.data.length>0">
-  <div class="col-sm-12">
-    <div class="no-result-div"> <mat-icon class="error-outline-icon">error_outline</mat-icon> </div>
-  </div>
-  <div class="col-sm-12">
-    <div class="no-result-div"> No matches found, remove some filters and refresh your results.  </div>
-  </div>
-  <div class="col-sm-12">
-
-    <div class="no-result-div">
-      <div class="chip-list-wrapper">
-        <mat-chip-list #chipList>
-          <ng-container *ngFor="let select of selectData">
-            <mat-chip class="cardinal-colors" (click)="removeChip(select)">
-              <mat-icon class="mat-chip-remove ">cancel</mat-icon><div class="mat-chip-text">{{ select.item }}</div>
-
-            </mat-chip>
-          </ng-container>
-        </mat-chip-list>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-12">
-    <div class="no-result-div"> <mat-icon class="" [ngClass]="{'error-outline-icon': true, 'enable-refresh' : isRefreshClick === true }" (click)="refreshResult()">refresh</mat-icon> </div>
-    <div [ngClass]="{'no-result-div': true, 'enable-refresh' : isRefreshClick === true }">REFRESH RESULTS</div>
+  <div class="table-padding" *ngIf="isload &&  dataSource.data.length>0">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <mat-header-cell *matHeaderCellDef>
+            <!--<mat-checkbox (change)="$event ? masterToggle() : null"
+                          [checked]="selection.hasValue() && isAllSelected()"
+                          [indeterminate]="selection.hasValue() && !isAllSelected()"
+                          [aria-label]="checkboxLabel()">
+            </mat-checkbox>-->
+          </mat-header-cell>
+
+          <mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(row) : null;checkBoxClicked($event)"
+                          [checked]="selection.isSelected(row)"
+                          [aria-label]="checkboxLabel(row)">
+            </mat-checkbox>
+          </mat-cell>
+        </ng-container>
+        <!-- subjectAreaName Column -->
+        <ng-container matColumnDef="subjectAreaName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.subjectAreaName}}"> {{row.subjectAreaName}} </mat-cell>
+        </ng-container>
+
+        <!-- subjectSubAreaName Column -->
+        <ng-container matColumnDef="subjectSubAreaName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> SubArea </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.subjectSubAreaName}}"> {{row.subjectSubAreaName}}</mat-cell>
+        </ng-container>
+
+        <!-- sourceSystemCode Column -->
+        <ng-container matColumnDef="sourceSystemCode">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> System Code </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.sourceSystemCode}}"> {{row.sourceSystemCode}} </mat-cell>
+        </ng-container>
+
+        <!-- objectName Column -->
+        <ng-container matColumnDef="objectName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Object Code </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.objectName}}"> {{row.objectName}} </mat-cell>
+        </ng-container>
+        <!-- resourceName Column -->
+        <ng-container matColumnDef="resourceName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Resource Name </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.resourceName}}"> {{row.resourceName}} </mat-cell>
+        </ng-container>
+        <!-- user Column -->
+        <ng-container matColumnDef="user">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>User </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.user}}"> {{row.user}} </mat-cell>
+        </ng-container>
+        <!-- lastUpdatedDate Column -->
+        <ng-container matColumnDef="lastUpdatedDate">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated </mat-header-cell>
+          <mat-cell *matCellDef="let row" matTooltip="{{row.lastUpdatedDate}}"> {{row.lastUpdatedDate}} </mat-cell>
+        </ng-container>
+        <!-- view details Column -->
+        <ng-container matColumnDef="viewdetails">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+
+            <a class="view-details" (click)="navigateToViewDetail(row)">view details</a>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+      </table>
+      <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5,10,25,50,100]" (page)="pageEvent = $event"
+                     aria-label="Select page">
+      </mat-paginator>
+    </div>
   </div>
-</div>
-<!--No Results Found-->
-<div *ngIf="dataSource.data.length==0">
-  <div class="no-results-found">No Results Found</div>
+  <!-- No matches found, remove some filters and refresh your results-->
+
+  <div *ngIf="!isload && dataSource.data.length>0">
+    <div class="col-sm-12">
+      <div class="no-result-div"> <mat-icon class="error-outline-icon">error_outline</mat-icon> </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="no-result-div"> No matches found, remove some filters and refresh your results.  </div>
+    </div>
+    <div class="col-sm-12">
+
+      <div class="no-result-div">
+        <div class="chip-list-wrapper">
+          <mat-chip-list #chipList>
+            <ng-container *ngFor="let select of selectData">
+              <mat-chip class="cardinal-colors" (click)="removeChip(select)">
+                <mat-icon class="mat-chip-remove ">cancel</mat-icon><div class="mat-chip-text">{{ select.item }}</div>
+
+              </mat-chip>
+            </ng-container>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="no-result-div"> <mat-icon class="" [ngClass]="{'error-outline-icon': true, 'enable-refresh' : isRefreshClick === true }" (click)="refreshResult()">refresh</mat-icon> </div>
+      <div [ngClass]="{'no-result-div': true, 'enable-refresh' : isRefreshClick === true }">REFRESH RESULTS</div>
+    </div>
+  </div>
+  <!--No Results Found-->
+  <div *ngIf="dataSource.data.length==0">
+    <div class="no-results-found">No Results Found</div>
+  </div>
 </div>

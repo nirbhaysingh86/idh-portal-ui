@@ -37,6 +37,7 @@ export class IdhSearchComponent implements OnInit {
     this.idhConfigService.getArea().subscribe((data: any) => {
       console.log(data);
       this.areadata = data;
+      this.setBreadcrumbMenuatext = 'Search';
     })
   }
   /** Search config based on search category */
