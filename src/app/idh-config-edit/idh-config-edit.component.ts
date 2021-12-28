@@ -10,6 +10,7 @@ export class IdhConfigEditComponent implements OnInit {
   idhConfig = 'Angular';
   setBreadcrumbMenuatext: any;
   ingestDisplay: any;
+  targetEnvDisplay: any;
   subAreaDisplay: any;
   configeditForm: FormGroup;
   ingestionSourceTable:any;
@@ -17,7 +18,7 @@ export class IdhConfigEditComponent implements OnInit {
     let date = new Date();
     date.setDate(date.getDate() + 30);
     // add a day
-    this.setBreadcrumbMenuatext = 'configedit';
+    this.setBreadcrumbMenuatext = 'Edit';
     this.configeditForm = this.fb.group({
       idhConfig: '',
       errorHandling: '',
@@ -69,7 +70,7 @@ export class IdhConfigEditComponent implements OnInit {
       name: '',
       endpoints: '',
       status:'',
-      directlyVendPayload:''
+      directlyVendPayload:'no'
     })
   }
 
@@ -134,7 +135,10 @@ export class IdhConfigEditComponent implements OnInit {
   areaSelection(value: any) {
     this.subAreaDisplay = value != '';
   }
-  
+  /** Source Env Selection */
+  sourceEnvSelection(value: any) {
+    this.targetEnvDisplay = value != '';
+  }
   onSubmit() {
     console.log(this.configeditForm.value);
   }

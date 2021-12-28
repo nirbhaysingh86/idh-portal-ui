@@ -3,12 +3,12 @@
   <div class="row intial-row-padding">
     <div class="col-sm-6">
       <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList ">
+        <div class="breadcrumb">
+          <div class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList ">
             <a *ngIf="breadmenu.isDisplay" [ngClass]="{'active-breadmenu': breadmenu.routerText != selectedrouterText, 'in-active-breadmenu' : breadmenu.routerText === selectedrouterText }"
                (click)="getSelectedMenu(breadmenu.routerText,breadmenu.routerLink)">{{breadmenu.routerText}}</a>
-          </li>
-        </ol>
+          </div>
+        </div>
 
       </nav>
     </div>

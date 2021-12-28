@@ -13,6 +13,11 @@
     "routerText": "Detail",
     "routerLink": "/configdetail",
     "isDisplay": false
+  },
+  {
+    "routerText": "Edit",
+    "routerLink": "/configedit",
+    "isDisplay": false
   }
-  
+
 ]

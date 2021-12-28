@@ -341,7 +341,7 @@
 
           <div class="col-sm-3">
             <mat-form-field appearance="outline" class="container">
-              <mat-label>Name</mat-label>
+              <mat-label>Sequence</mat-label>
               <mat-select formControlName="sequence">
                 <mat-option value="lorem">Lorem</mat-option>
                 <mat-option value="ipsum">Ipsum</mat-option>
@@ -351,20 +351,23 @@
           </div>
           <div class="col-sm-4">
             <mat-form-field appearance="outline" class="container">
-              <mat-label>Endpoint Address</mat-label>
-              <mat-select formControlName="sourceEnv">
-                <mat-option value="yes">Yes</mat-option>
-                <mat-option value="no">No</mat-option>
+              <mat-label>Source Environment</mat-label>
+              <mat-select formControlName="sourceEnv" (selectionChange)="sourceEnvSelection($event.value)">
+                <mat-option value="PROD">PROD</mat-option>
+                <mat-option value="PREPROD">PREPROD</mat-option>
+                <mat-option value="UAT">UAT</mat-option>
               </mat-select>
             </mat-form-field>
 
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4" *ngIf="targetEnvDisplay">
             <mat-form-field appearance="outline" class="container">
-              <mat-label>Status</mat-label>
+              <mat-label>Target </mat-label>
               <mat-select formControlName="targetEnv">
-                <mat-option value="yes">Yes</mat-option>
-                <mat-option value="no">No</mat-option>
+
+                <mat-option value="PREPROD">PREPROD</mat-option>
+                <mat-option value="UAT">UAT</mat-option>
+                <mat-option value="UAT">SIT</mat-option>
               </mat-select>
             </mat-form-field>
 
@@ -484,5 +487,5 @@
     </div>
   </form>
   <br />
-  <!--{{this.configeditForm.value | json}}-->
+   {{this.configeditForm.value | json}} 
 </div>
