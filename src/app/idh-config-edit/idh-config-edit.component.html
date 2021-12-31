@@ -387,65 +387,66 @@
     </div>
 
     <!--Vend Topics-->
-    <div class="row bolder-div-padding add-btn-padding ">
-      <div class="col-sm-9">
-        <div class="bolder-header-div">Vend Topics</div>
-        <div class="content-div">Define how to vend data after the ingesation event from SNS,SQS, or a Kafka request.</div>
-      </div>
-    </div>
-    <div class="row div-padding">
-      <div formArrayName="vendTopic">
-        <div class="row div-padding" *ngFor="let vendtopic of vendTopic().controls; let i=index" [formGroupName]="i">
-
-          <div class="col-sm-2">
-            <mat-form-field appearance="outline" class="container">
-              <mat-label>Name</mat-label>
-              <mat-select formControlName="name">
-                <mat-option value="Lorem">Lorem</mat-option>
-                <mat-option value="Ipsum">Ipsum</mat-option>
-              </mat-select>
-            </mat-form-field>
-
-          </div>
-          <div class="col-sm-2">
-            <mat-form-field appearance="outline" class="container">
-              <mat-label>Endpoint Address</mat-label>
-              <mat-select formControlName="endpoints">
-                <mat-option value="Yes">Yes</mat-option>
-                <mat-option value="No">No</mat-option>
-              </mat-select>
-            </mat-form-field>
-
-          </div>
-          <div class="col-sm-2">
-            <mat-form-field appearance="outline" class="container">
-              <mat-label>Status</mat-label>
-              <mat-select formControlName="status">
-                <mat-option value="Yes">Yes</mat-option>
-                <mat-option value="No">No</mat-option>
-              </mat-select>
-            </mat-form-field>
-
-          </div>
-          <div class="col-sm-2">
-            <mat-form-field appearance="outline" class="container">
-              <mat-label>Directly Vend Payload</mat-label>
-              <mat-select formControlName="directlyVendPayload">
-                <mat-option value="Yes">Yes</mat-option>
-                <mat-option value="No">No</mat-option>
-              </mat-select>
-            </mat-form-field>
-
-          </div>
-          <div class="col-sm-1">
-            <mat-icon (click)="removeVendTopic(i)" class="delete-btn ">delete</mat-icon>
-          </div>
+    <div *nfIf="ingestDisplay">
+      <div class="row bolder-div-padding add-btn-padding ">
+        <div class="col-sm-9">
+          <div class="bolder-header-div">Vend Topics</div>
+          <div class="content-div">Define how to vend data after the ingesation event from SNS,SQS, or a Kafka request.</div>
         </div>
+      </div>
+      <div class="row div-padding">
+        <div formArrayName="vendTopic">
+          <div class="row div-padding" *ngFor="let vendtopic of vendTopic().controls; let i=index" [formGroupName]="i">
 
-        <a mat-button class="new-config-link" appearance="outline" (click)="addVendTopic()">ADD</a>
+            <div class="col-sm-2">
+              <mat-form-field appearance="outline" class="container">
+                <mat-label>Name</mat-label>
+                <mat-select formControlName="name">
+                  <mat-option value="Lorem">Lorem</mat-option>
+                  <mat-option value="Ipsum">Ipsum</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col-sm-2">
+              <mat-form-field appearance="outline" class="container">
+                <mat-label>Endpoint Address</mat-label>
+                <mat-select formControlName="endpoints">
+                  <mat-option value="Yes">Yes</mat-option>
+                  <mat-option value="No">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col-sm-2">
+              <mat-form-field appearance="outline" class="container">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status">
+                  <mat-option value="Yes">Yes</mat-option>
+                  <mat-option value="No">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col-sm-2">
+              <mat-form-field appearance="outline" class="container">
+                <mat-label>Directly Vend Payload</mat-label>
+                <mat-select formControlName="directlyVendPayload">
+                  <mat-option value="Yes">Yes</mat-option>
+                  <mat-option value="No">No</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            </div>
+            <div class="col-sm-1">
+              <mat-icon (click)="removeVendTopic(i)" class="delete-btn ">delete</mat-icon>
+            </div>
+          </div>
+
+          <a mat-button class="new-config-link" appearance="outline" (click)="addVendTopic()">ADD</a>
+        </div>
       </div>
     </div>
-
     <!--ActiveBatch Pipelines-->
     <div class="row bolder-div-padding add-btn-padding ">
       <div class="col-sm-12">
