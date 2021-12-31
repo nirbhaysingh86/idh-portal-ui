@@ -14,10 +14,11 @@ export class NavMenuComponent {
   }
 
   ngOnInit() {
-    
+    this.envType = localStorage.getItem("envType");
   }
 
-  menuClick(envType:any) {
-    this.envType = envType;
+  menuClick(envType: any) {
+    localStorage.setItem("envType", envType);
+     
   }
 }

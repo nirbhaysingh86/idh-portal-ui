@@ -150,7 +150,7 @@ export class IdhConfigResult {
         return;
       }
     }
-    if (this.dialogValue.event == 'cancel' || (isrefresh && this.selectData && this.selectData.length == 0)) {
+    if ((this.dialogValue && this.dialogValue.event == 'cancel') || (isrefresh && this.selectData && this.selectData.length == 0)) {
       this.dataSource.filter = "";
       return;
 
