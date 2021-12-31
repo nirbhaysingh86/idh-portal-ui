@@ -1,4 +1,4 @@
- <breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"></breadcrumb-menu>
+<breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"></breadcrumb-menu>
 
 <div class="card card-text-size">
   <div class="card-body">
@@ -34,7 +34,7 @@
       <!-- subjectAreaName Column -->
       <ng-container matColumnDef="subjectAreaName">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltipPosition="left" matTooltip="{{row.subjectAreaName}}"  > {{row.subjectAreaName}} </mat-cell>
+        <mat-cell *matCellDef="let row" matTooltipPosition="left" matTooltip="{{row.subjectAreaName}}"> {{row.subjectAreaName}} </mat-cell>
       </ng-container>
       <!-- subjectSubAreaName Column -->
       <ng-container matColumnDef="subjectSubAreaName">
@@ -77,10 +77,13 @@
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </table>
-    <mat-paginator  [pageSize]="pageSize" [pageSizeOptions]="[5,10,25,50,100]"
-                   showFirstLastButtons
-                   aria-label="Select page of periodic elements">
-    </mat-paginator>
+    <div class="container-fluid" #focus>
+
+      <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[5,10,25,50,100]"
+                     showFirstLastButtons (click)="scrollUp()"
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
   </div>
 </div>
 <!-- No matches found, remove some filters and refresh your results-->

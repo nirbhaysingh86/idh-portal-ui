@@ -24,6 +24,7 @@ body {
   border-radius: 0px !important;
   border: 1px solid rgb(223, 223, 233);
   border-top-style: none;
+  top: -145px!important;
 }
 
 .mat-form-field-appearance-outline .mat-form-field-outline-start {
@@ -124,3 +125,4 @@ body {
 .breadcrumb-item:last-child::before {
   display: none !important;
 }
+

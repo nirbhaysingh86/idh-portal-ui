@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -34,6 +34,7 @@ export class IdhConfigResult {
   isload: any;
   isRefreshClick: any;
   setBreadcrumbMenuatext: any;
+ 
 
   constructor(private idhConfigService: HttpClientIdhConfigService, public dialog: MatDialog, private router: Router) {
     if (this.router && this.router.getCurrentNavigation()) {
@@ -260,4 +261,10 @@ export class IdhConfigResult {
       this.selectData.splice(i, 1);
     }
   };
+
+  @ViewChild('focus', { read: ElementRef }) tableInput: ElementRef | any;
+  scrollUp(): void {
+    
+    setTimeout(() => this.tableInput.nativeElement.scrollIntoView({ behavior: 'smooth', block: "end" }));
+  }
 }

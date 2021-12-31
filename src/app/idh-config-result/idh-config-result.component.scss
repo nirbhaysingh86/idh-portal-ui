@@ -88,7 +88,7 @@ table {
   width: 100%;
 }
 .example-container {
-  height: 240px;
+  height: 325px;
   overflow: auto;
 }
 
@@ -112,4 +112,9 @@ tr.mat-footer-row {
   border: 1px solid gray;
   max-width: unset !important;
    
+}
+.mat-select-panel:not([class*=mat-elevation-z]) {
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  /* padding-top: 20px; */
+  top: -200px!important;
 }
