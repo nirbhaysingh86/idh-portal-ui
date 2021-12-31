@@ -48,7 +48,7 @@ export class IdhConfigResult {
   ngOnInit() {
     this.getIdhConfigResult();
     this.filterCount = 0;
-    
+
   }
   /** Check the promote link enable/disable based on checkbox selection */
   checkBoxClicked($event: any) {
@@ -93,14 +93,14 @@ export class IdhConfigResult {
       this.dialogValue = result;
       this.countFilter();
       this.filterdataBasedOnSelection(false);
-      
+
     });
   }
   /** Filter config result based on filter selection. */
   filterdataBasedOnSelection(isrefresh: boolean) {
     this.isload = true;
     this.isRefreshClick = false;
-    
+
     if (this.dialogValue && this.dialogValue.area) {
       const filterValue = this.dialogValue.area;
       this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -144,16 +144,16 @@ export class IdhConfigResult {
       }
     }
     if (this.dialogValue && this.dialogValue.lastUpdatedDate) {
-      
+
       this.dataSource.filter = this.dialogValue.lastUpdatedDate.toLocaleDateString();
       if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
         return;
       }
     }
-    if (isrefresh && this.selectData && this.selectData.length == 0) {
+    if (this.dialogValue.event == 'cancel' || (isrefresh && this.selectData && this.selectData.length == 0)) {
       this.dataSource.filter = "";
       return;
-       
+
     }
     if (this.dialogValue && this.dialogValue.user) {
       if (this.dialogValue.user.length == 0) {
@@ -170,7 +170,7 @@ export class IdhConfigResult {
     }
     if (this.dataSource.filteredData && this.dataSource.filteredData.length == 0) {
       this.isload = false;
-     
+
     }
   }
   /** Count filter to show to count of filter. */
@@ -178,7 +178,7 @@ export class IdhConfigResult {
 
     let count = 0;
     this.selectData = [];
-    let data = {  };
+    let data = {};
     if (this.dialogValue && this.dialogValue.area) {
       count += 1;
       data = { "item": "<FILTER 1 Area>", "selected": true };
@@ -204,12 +204,12 @@ export class IdhConfigResult {
       data = { "item": "<FILTER 1 System Code>", "selected": true };
       this.selectData.push(data);
     }
-    if (this.dialogValue && this.dialogValue.user && this.dialogValue.user.length>0) {
+    if (this.dialogValue && this.dialogValue.user && this.dialogValue.user.length > 0) {
       count += 1;
       data = { "item": "<FILTER 1 User>", "selected": true };
       this.selectData.push(data);
     }
-    if (this.dialogValue && this.dialogValue.lastUpdatedDate  ) {
+    if (this.dialogValue && this.dialogValue.lastUpdatedDate) {
       count += 1;
       data = { "item": "<FILTER 1 Last Updated Date>", "selected": true };
       this.selectData.push(data);

@@ -43,7 +43,9 @@ export class IdhFilterDialogComponenet {
     this.area;
     this.dialogRef.close({ event: 'close', objectCode: this.objectCode, resourceName: this.resourceName, systemCode: this.systemCode, subArea: this.subArea, area: this.area, user: this.user?.value, lastUpdatedDate: this.lastUpdatedDate });
   }
-
+  cancelFilter() {
+    this.dialogRef.close({ event: 'cancel', objectCode: '', resourceName: '', systemCode: '', subArea: '', area: '', user: '', lastUpdatedDate: '' });
+  }
   cardValue: any = {
     options: []
   };
