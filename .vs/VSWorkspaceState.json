@@ -3,14 +3,15 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\home-idh",
     "\\src\\app\\idh-config-detail",
     "\\src\\app\\idh-config-edit",
     "\\src\\app\\idh-config-result",
-    "\\src\\app\\models",
+    "\\src\\app\\idh-search",
     "\\src\\app\\nav-menu",
     "\\src\\app\\shared",
-    "\\src\\app\\shared\\multiselect-autocomplete"
+    "\\src\\app\\shared\\breadcrumb-menu"
   ],
-  "SelectedNode": "\\src\\app\\idh-config-edit\\idh-config-edit.component.scss",
+  "SelectedNode": "\\src\\app\\shared\\breadcrumb-menu\\breadcrumb-menu.component.html",
   "PreviewInSolutionExplorer": false
 }

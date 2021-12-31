@@ -22,13 +22,7 @@
       <!-- Checkbox Column -->
       <ng-container matColumnDef="select">
         <mat-header-cell *matHeaderCellDef>
-          <!--<mat-checkbox (change)="$event ? masterToggle() : null"
-                        [checked]="selection.hasValue() && isAllSelected()"
-                        [indeterminate]="selection.hasValue() && !isAllSelected()"
-                        [aria-label]="checkboxLabel()">
-          </mat-checkbox>-->
         </mat-header-cell>
-
         <mat-cell *matCellDef="let row">
           <mat-checkbox (click)="$event.stopPropagation()"
                         (change)="$event ? selection.toggle(row) : null;checkBoxClicked($event)"
@@ -42,7 +36,6 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header> Area </mat-header-cell>
         <mat-cell *matCellDef="let row" matTooltip="{{row.subjectAreaName}}"> {{row.subjectAreaName}} </mat-cell>
       </ng-container>
-
       <!-- subjectSubAreaName Column -->
       <ng-container matColumnDef="subjectSubAreaName">
         <mat-header-cell *matHeaderCellDef mat-sort-header> SubArea </mat-header-cell>
@@ -54,7 +47,6 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header> System Code </mat-header-cell>
         <mat-cell *matCellDef="let row" matTooltip="{{row.sourceSystemCode}}"> {{row.sourceSystemCode}} </mat-cell>
       </ng-container>
-
       <!-- objectName Column -->
       <ng-container matColumnDef="objectName">
         <mat-header-cell *matHeaderCellDef mat-sort-header> Object Code </mat-header-cell>
@@ -79,14 +71,11 @@
       <ng-container matColumnDef="viewdetails">
         <mat-header-cell *matHeaderCellDef></mat-header-cell>
         <mat-cell *matCellDef="let row">
-
           <a class="view-details" (click)="navigateToViewDetail(row)">view details</a>
         </mat-cell>
       </ng-container>
-
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-
     </table>
     <mat-paginator  [pageSize]="pageSize" [pageSizeOptions]="[5,10,25,50,100]"
                    showFirstLastButtons
