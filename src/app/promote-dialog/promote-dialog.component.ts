@@ -20,9 +20,7 @@ export class PromoteDialogComponenet {
     modalRef.componentInstance.promotesuccess = this.slectedEnv;
   }
   ngOnInit() {
-    if (this.promote && this.promote.selectedEnvType) {
-      this.slectedEnv = this.promote.selectedEnvType;
-    }
+    this.slectedEnv = localStorage.getItem("envType");
 
   }
 }

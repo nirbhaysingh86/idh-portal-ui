@@ -19,6 +19,6 @@ export class NavMenuComponent {
 
   menuClick(envType: any) {
     localStorage.setItem("envType", envType);
-     
+    this.envType = localStorage.getItem("envType");
   }
 }
