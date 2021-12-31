@@ -1,8 +1,7 @@
 
 <h1 mat-dialog-title class="dialog-title">Filter Options</h1>
 <div mat-dialog-content>
-  <div class="card card-text-size">
-    <div class="card-body">
+ 
       <div class="row">
         <div class="col-sm-6">
           <mat-form-field appearance="outline" >
@@ -82,12 +81,10 @@
         </div>
       </div>
     </div>
-  </div>
-
-</div>
+  
 <div mat-dialog-actions class="direction-right">
   <button mat-raised-button  class="btn-filter" (click)="applyFilter()">APPLY FILTERS</button>
 
-  <button mat-raised-button   class="btn-cancel" (click)="cancelFilter()">CANCEL</button>
+  <button  mat-flat-button   class="btn-cancel" (click)="cancelFilter()">CANCEL</button>
 
 </div>

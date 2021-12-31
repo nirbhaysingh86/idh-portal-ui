@@ -13,7 +13,8 @@ export class IdhConfigEditComponent implements OnInit {
   targetEnvDisplay: any;
   subAreaDisplay: any;
   configeditForm: FormGroup;
-  ingestionSourceTable:any;
+  ingestionSourceTable: any;
+  isVendTopic: any;
   constructor(private fb: FormBuilder) {
     let date = new Date();
     date.setDate(date.getDate() + 30);
@@ -22,7 +23,7 @@ export class IdhConfigEditComponent implements OnInit {
     this.configeditForm = this.fb.group({
       idhConfig: '',
       errorHandling: '',
-      configurationOption: this.fb.group({ ingestTaxonomy: '', copyToSource: '', dataLoadType: '', retainedVersion: '', escalationLevel: 'Priority 1' }),
+      configurationOption: this.fb.group({ ingestTaxonomy: 'No', copyToSource: '', dataLoadType: '', retainedVersion: '', escalationLevel: 'Priority 1' }),
       configBasicSetting: this.fb.group({ area:'Ipsum', subarea:'',systemCode: '', objectCode:'', resource:'', ingestionSource :'Table',objectName:'',contentType:'Json', effectiveDate: new Date(), exipirationDate: date ,configurationStatus: 'Active' }),
       projectDetail: this.fb.array([]),
       copyToLowerEnv: this.fb.array([]),
@@ -41,8 +42,12 @@ export class IdhConfigEditComponent implements OnInit {
 
   checkControlsDisplay() {
     let val = this.configeditForm.get("configBasicSetting")?.value;
+    let configurationOpt = this.configeditForm.get("configurationOption")?.value; 
     this.ingestionSourceTable = val.ingestionSource == 'Table';
     this.subAreaDisplay = val.area != "";
+    this.ingestDisplay = configurationOpt.ingestTaxonomy == 'No';
+    this.isVendTopic = configurationOpt.ingestTaxonomy == 'No';
+    
   }
   /** activeBatch */
   activeBatch(): FormArray {
@@ -130,6 +135,7 @@ export class IdhConfigEditComponent implements OnInit {
   /** ingestion Change */
   ingestChange(value: any) {
     this.ingestDisplay = value == 'No';
+    this.isVendTopic = value == 'No';
   }
   /** Area change */
   areaSelection(value: any) {
