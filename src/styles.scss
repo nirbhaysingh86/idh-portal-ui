@@ -31,7 +31,13 @@ body {
   border: 1px solid rgb(221, 211, 205) !important;
   border-right-style: none !important;
 }
-
+.mat-form-field-appearance-outline .mat-form-field-outline-gap {
+  border-radius: 0.000001px!important;
+  border: 1px solid gb(214, 214, 230) !important;
+  border-left-style: none !important;
+  border-right-style: none !important;
+  width:0px!important;
+}
 .mat-form-field-appearance-outline .mat-form-field-outline-end {
   border-radius: 0px !important;
   border: 1px solid rgb(214, 214, 230) !important;

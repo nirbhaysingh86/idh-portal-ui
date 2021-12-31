@@ -5,8 +5,8 @@
     <div class="card-body">
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="container">
-            <mat-label class="mat-label-text">Area</mat-label>
+          <mat-form-field appearance="outline" >
+            <mat-label class="mat-label-text" appearance="outline">Area</mat-label>
             <mat-select [(ngModel)]="area">
               <mat-option *ngFor="let area of idhserach" [value]="area.value">
                 {{area.text}}
@@ -15,7 +15,7 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="container">
+          <mat-form-field appearance="outline"  >
             <mat-label class="mat-label-text">SubArea</mat-label>
             <mat-select [(ngModel)]="subArea">
               <mat-option *ngFor="let food of idhserach" [value]="food.value">
@@ -28,7 +28,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="container">
+          <mat-form-field appearance="outline"  >
             <mat-label class="mat-label-text">System Code</mat-label>
             <mat-select [(ngModel)]="systemCode">
               <mat-option *ngFor="let food of idhserach" [value]="food.value">
@@ -38,7 +38,7 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="container">
+          <mat-form-field appearance="outline"  >
             <mat-label class="mat-label-text">Object Code</mat-label>
             <mat-select [(ngModel)]="objectCode">
               <mat-option *ngFor="let food of idhserach" [value]="food.value">
@@ -51,7 +51,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="container">
+          <mat-form-field appearance="outline"  >
             <mat-label class="mat-label-text">Resource Name</mat-label>
             <mat-select [(ngModel)]="resourceName">
               <mat-option *ngFor="let food of idhserach" [value]="food.value" >
@@ -61,29 +61,13 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" class="container">
+          <mat-form-field appearance="outline"  >
             <mat-label class="mat-label-text">User</mat-label>
             <mat-select [formControl]="user" multiple  >
               <mat-option *ngFor="let topping of selectOptions" [value]="topping">{{topping}}</mat-option>
             </mat-select>
           </mat-form-field>
-          <!--<multiselect-autocomplete class="mat-label-text container" placeholder="User" appearance="outline"
-                                    key="options"
-                                    [data]="selectOptions"
-                                    [selectedData]="cardValue.options.join()"
-                                    (result)="selectChange($event)">
-          </multiselect-autocomplete>
-
-          <mat-card class="card-wrapper answers">
-            <ng-container *ngIf="cardValue.options.length === 0">
-              No Selected Options
-            </ng-container>
-            <ng-container *ngIf="cardValue.options.length > 0">
-              <div *ngFor="let option of cardValue.options">
-                {{ option }}
-              </div>
-            </ng-container>
-           </mat-card>-->
+          
 
         </div>
       </div>
