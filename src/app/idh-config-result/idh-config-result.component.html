@@ -65,7 +65,7 @@
       <!-- lastUpdatedDate Column -->
       <ng-container matColumnDef="lastUpdatedDate">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated </mat-header-cell>
-        <mat-cell *matCellDef="let row" matTooltipPosition="left" matTooltip="{{row.lastUpdatedDate| date:'MM-dd-yyyy'}}"> {{row.lastUpdatedDate| date:'MM-dd-yyyy'}} </mat-cell>
+        <mat-cell *matCellDef="let row" matTooltipPosition="left" matTooltip="{{row.lastUpdatedDate| date:'MM/dd/yyyy'}}"> {{row.lastUpdatedDate| date:'MM/dd/yyyy'}} </mat-cell>
       </ng-container>
       <!-- view details Column -->
       <ng-container matColumnDef="viewdetails">

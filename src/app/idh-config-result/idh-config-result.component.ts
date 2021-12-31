@@ -143,6 +143,13 @@ export class IdhConfigResult {
         return;
       }
     }
+    if (this.dialogValue && this.dialogValue.lastUpdatedDate) {
+      
+      this.dataSource.filter = this.dialogValue.lastUpdatedDate.toLocaleDateString();
+      if (this.dataSource.filteredData && this.dataSource.filteredData.length > 0) {
+        return;
+      }
+    }
     if (isrefresh && this.selectData && this.selectData.length == 0) {
       this.dataSource.filter = "";
       return;
@@ -200,6 +207,11 @@ export class IdhConfigResult {
     if (this.dialogValue && this.dialogValue.user && this.dialogValue.user.length>0) {
       count += 1;
       data = { "item": "<FILTER 1 User>", "selected": true };
+      this.selectData.push(data);
+    }
+    if (this.dialogValue && this.dialogValue.lastUpdatedDate  ) {
+      count += 1;
+      data = { "item": "<FILTER 1 Last Updated Date>", "selected": true };
       this.selectData.push(data);
     }
     this.filterCount = count;

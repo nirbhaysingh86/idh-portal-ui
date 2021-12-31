@@ -18,6 +18,7 @@ export class IdhFilterDialogComponenet {
   systemCode: any;
   subArea: any;
   area: any;
+  lastUpdatedDate: any;
   @Input() public dialogValue: any;
 
   constructor(
@@ -34,12 +35,13 @@ export class IdhFilterDialogComponenet {
       this.systemCode = this.dialogValue.systemCode;
       this.subArea = this.dialogValue.subArea;
       this.area = this.dialogValue.area;
+      this.lastUpdatedDate = this.dialogValue.lastUpdatedDate;
     }
 
   }
   applyFilter() {
     this.area;
-    this.dialogRef.close({ event: 'close', objectCode: this.objectCode, resourceName: this.resourceName, systemCode: this.systemCode, subArea: this.subArea, area: this.area, user: this.user?.value });
+    this.dialogRef.close({ event: 'close', objectCode: this.objectCode, resourceName: this.resourceName, systemCode: this.systemCode, subArea: this.subArea, area: this.area, user: this.user?.value, lastUpdatedDate: this.lastUpdatedDate });
   }
 
   cardValue: any = {
