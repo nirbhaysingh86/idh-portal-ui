@@ -19,7 +19,7 @@ export class IdhConfigEditComponent implements OnInit {
     let date = new Date();
     date.setDate(date.getDate() + 30);
     // add a day
-    this.setBreadcrumbMenuatext = 'EDetails';
+    
     this.configeditForm = this.fb.group({
       idhConfig: '',
       errorHandling: '',
@@ -38,6 +38,7 @@ export class IdhConfigEditComponent implements OnInit {
     this.activeBatch().push(this.newActiveBatch());
     this.vendTopic().push(this.newVendTopic());
     this.checkControlsDisplay();
+    this.setBreadcrumbMenuatext = 'EDetails';
   }
 
   checkControlsDisplay() {

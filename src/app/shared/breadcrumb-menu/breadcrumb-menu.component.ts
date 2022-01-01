@@ -26,10 +26,9 @@ export class BreadcrumbMmenuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getBreadcrumbMenu();
     this.selectedrouterText = this.getCurrentBreadcrumbMenu || 'Search';
     this.envType = 'DEV';
-
+    this.getBreadcrumbMenu();
   }
 
   getBreadcrumbMenu() {
