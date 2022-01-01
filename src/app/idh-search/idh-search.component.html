@@ -8,9 +8,11 @@
     <mat-form-field appearance="outline" class="container">
       <mat-label class="mat-label-text">Area</mat-label>
       <mat-select [(ngModel)]="selectedArea">
-        <mat-option *ngFor="let area of areadata" [value]="area.areaId">
-          {{area.subjectAreaName}}
+
+        <mat-option *ngFor="let area of areadata | orderBy: {property: 'areaId', direction: '1'}" [value]="area.areaId">
+          {{ area.subjectAreaName}}
         </mat-option>
+         
       </mat-select>
     </mat-form-field>
   </div>
@@ -18,7 +20,7 @@
     <mat-form-field appearance="outline" class="container">
       <mat-label class="mat-label-text">SubArea</mat-label>
       <mat-select [(ngModel)]="selectedSubArea">
-        <mat-option *ngFor="let subarea of idhserach" [value]="subarea.value">
+        <mat-option *ngFor="let subarea of idhserach | orderBy: {property: 'value', direction: '1'}" [value]="subarea.value">
           {{subarea.text}}
         </mat-option>
       </mat-select>
@@ -31,7 +33,7 @@
     <mat-form-field appearance="outline" class="container">
       <mat-label class="mat-label-text">System Code</mat-label>
       <mat-select [(ngModel)]="selectedSystemCode">
-        <mat-option *ngFor="let systemCode of idhserach" [value]="systemCode.value">
+        <mat-option *ngFor="let systemCode of idhserach | orderBy: {property: 'value', direction: '1'}" [value]="systemCode.value">
           {{systemCode.text}}
         </mat-option>
       </mat-select>
@@ -41,7 +43,7 @@
     <mat-form-field appearance="outline" class="container">
       <mat-label class="mat-label-text">Object Code</mat-label>
       <mat-select [(ngModel)]="selectedObjectCode">
-        <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
+        <mat-option *ngFor="let idhsearch of idhserach | orderBy: {property: 'value', direction: '1'}" [value]="idhsearch.value">
           {{idhsearch.text}}
         </mat-option>
       </mat-select>
@@ -54,7 +56,7 @@
     <mat-form-field appearance="outline" class="container">
       <mat-label class="mat-label-text">Resource Name</mat-label>
       <mat-select [(ngModel)]="selectedResourceName">
-        <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
+        <mat-option *ngFor="let idhsearch of idhserach | orderBy: {property: 'value', direction: '1'}" [value]="idhsearch.value">
           {{idhsearch.text}}
         </mat-option>
       </mat-select>

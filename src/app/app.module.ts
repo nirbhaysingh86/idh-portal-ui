@@ -21,6 +21,8 @@ import { ChartsModule } from 'ng2-charts';
 import { IdhSearchComponent } from './idh-search/idh-search.component';
 import { MultiselectAutocompleteComponent } from './shared/multiselect-autocomplete/multiselect-autocomplete.component';
 import { BreadcrumbMmenuComponent } from './shared/breadcrumb-menu/breadcrumb-menu.component';
+import { OrderrByPipe } from './pipe/order-by-pipe';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { BreadcrumbMmenuComponent } from './shared/breadcrumb-menu/breadcrumb-me
     MultiselectAutocompleteComponent,
     IdhConfigEditComponent,
     PromoteDialogSuccessComponenet,
-    BreadcrumbMmenuComponent
+    BreadcrumbMmenuComponent,
+    OrderrByPipe
   ],
   imports: [
     BrowserModule,

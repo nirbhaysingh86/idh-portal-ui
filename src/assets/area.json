@@ -1,5 +1,10 @@
 [
   {
+    "areaId": "Pune",
+    "subjectAreaName": "Pune"
+
+  },
+  {
     "areaId": "Lorem",
     "subjectAreaName": "Lorem"
 
@@ -11,6 +16,6 @@
   {
     "areaId": "Patna",
     "subjectAreaName": "Patna"
-  } 
+  }
 
 ]

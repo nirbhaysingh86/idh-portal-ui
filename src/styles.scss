@@ -44,16 +44,17 @@ body {
 }
 
 .filter-shape {
-  height: 45px!important;
-  width: 45px!important;
-  background-color: ghostwhite!important;
+  height: 45px !important;
+  width: 45px !important;
+  background-color: ghostwhite !important;
   border-radius: 50%;
   display: inline-block;
   padding-left: 10px;
   padding-top: 10px;
   margin-left: 19px;
   cursor: pointer;
-  color: #7fd2f3
+  color: #2a9fd8!important;
+  vertical-align:middle!important;
 }
 .dialog-title {
   font-weight: bold;
