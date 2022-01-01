@@ -4,7 +4,7 @@
  
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline" >
+          <mat-form-field class="widthcontainer" appearance="outline" >
             <mat-label class="mat-label-text" appearance="outline">Area</mat-label>
             <mat-select [(ngModel)]="area">
               <mat-option *ngFor="let area of idhserach" [value]="area.value">
@@ -14,7 +14,7 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline"  >
+          <mat-form-field class="widthcontainer" appearance="outline"  >
             <mat-label class="mat-label-text">SubArea</mat-label>
             <mat-select [(ngModel)]="subArea">
               <mat-option *ngFor="let food of idhserach" [value]="food.value">
@@ -27,7 +27,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline"  >
+          <mat-form-field  class="widthcontainer" appearance="outline"  >
             <mat-label class="mat-label-text">System Code</mat-label>
             <mat-select [(ngModel)]="systemCode">
               <mat-option *ngFor="let food of idhserach" [value]="food.value">
@@ -37,7 +37,7 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline"  >
+          <mat-form-field class="widthcontainer" appearance="outline"  >
             <mat-label class="mat-label-text">Object Code</mat-label>
             <mat-select [(ngModel)]="objectCode">
               <mat-option *ngFor="let food of idhserach" [value]="food.value">
@@ -50,7 +50,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field appearance="outline"  >
+          <mat-form-field class="widthcontainer"  appearance="outline"  >
             <mat-label class="mat-label-text">Resource Name</mat-label>
             <mat-select [(ngModel)]="resourceName">
               <mat-option *ngFor="let food of idhserach" [value]="food.value" >
@@ -60,7 +60,7 @@
           </mat-form-field>
         </div>
         <div class="col-sm-6">
-          <mat-form-field appearance="outline"  >
+          <mat-form-field class="widthcontainer" appearance="outline"  >
             <mat-label class="mat-label-text">User</mat-label>
             <mat-select [formControl]="user" multiple  >
               <mat-option *ngFor="let topping of selectOptions" [value]="topping">{{topping}}</mat-option>
@@ -72,7 +72,7 @@
       </div>
       <div class="row">
         <div class="col-sm-6">
-          <mat-form-field class="container" appearance="outline">
+          <mat-form-field class="widthcontainer" appearance="outline">
             <input matInput [(ngModel)]="lastUpdatedDate" [matDatepicker]="picker2" placeholder="Last Updated" class="mat-label-text">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2 color="primary"></mat-datepicker>
