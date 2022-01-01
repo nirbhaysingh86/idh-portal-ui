@@ -24,7 +24,7 @@ export class IdhConfigDetailComponent implements OnInit {
   areadata: any;
   idhConfig = { "idhConfig": "", "errorHandling": "Lorem Ipsum", "configurationOption": { "ingestTaxonomy": "No", "copyToSource": "", "dataLoadType": "Delta", "retainedVersion": "1", "escalationLevel": "Priority 1" }, "configBasicSetting": { "area": "", "subarea": "", "systemCode": "ipsum", "objectCode": "ObjectCode 2", "resource": "Resource 2", "ingestionSource": "Table", "objectName": "", "contentType": "Json", "effectiveDate": "2021-12-28T03:00:35.851Z", "exipirationDate": "2022-01-27T03:00:35.851Z", "creationDate": "2022-01-27T03:00:35.851Z", "configurationStatus": "Active" }, "projectDetail": [{ "keyword": "ProjectCode", "value": "Ta2" }, { "keyword": "ProjectCode", "value": "Ta3" }], "copyToLowerEnv": [{ "sequence": "Ipsum", "sourceEnv": "PREPROD", "targetEnv": "UAT" }], "activeBatch": [{ "planName": "Ipsum", "status": "Yes" }, { "planName": "Lorem", "status": "No" }], "vendTopic": [{ "name": "Ipsum", "endpoints": "Yes", "status": "Yes", "directlyVendPayload": "No" }, { "name": "Ipsum", "endpoints": "No", "status": "No", "directlyVendPayload": "No" }] };
   constructor(private idhConfigService: HttpClientIdhConfigService, private router: Router, private dialog: MatDialog) {
-    this.setBreadcrumbMenuatext = 'Detail';
+    this.setBreadcrumbMenuatext = 'Details';
   }
 
   ngOnInit() {

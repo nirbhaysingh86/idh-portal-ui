@@ -1,6 +1,7 @@
 <breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"></breadcrumb-menu>
+ <hr />
 <div class="container-fluid">
-   
+
   <div class="row bolder-div-padding ">
     <div class="col-sm-9">
       <div class="bolder-header-div">All fields are required.</div>
@@ -50,7 +51,7 @@
             </mat-form-field>
           </div>
         </div>
-       
+
       </div>
 
       <div class="row div-padding">
@@ -90,112 +91,112 @@
             </mat-form-field>
           </div>
         </div>
-        </div>
-        <div class="row div-padding">
-          <div class="col-sm-3">
-
-            <div formGroupName="configBasicSetting">
-              <mat-form-field appearance="outline" class="container">
-                <mat-label>Ingestion Source</mat-label>
-                <mat-select formControlName="ingestionSource" (selectionChange)="ingestionSourceChange($event.value)">
-                  <mat-option value="Table">Table</mat-option>
-                  <mat-option value="File">File</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-
-          </div>
-          <div class="col-sm-3" *ngIf="ingestionSourceTable">
-            <div formGroupName="configurationOption">
-              <mat-form-field appearance="outline" class="container">
-                <mat-label>Database/Schema</mat-label>
-                <mat-select formControlName="retainedVersion">
-                  <mat-option value="S3-v1">S3-v1</mat-option>
-                  <mat-option value="S3-v2">S3-v2</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="col-sm-3" *ngIf="ingestionSourceTable">
-            <div formGroupName="configurationOption">
-              <mat-form-field appearance="outline" class="container">
-                <mat-label>Table Name</mat-label>
-                <mat-select formControlName="retainedVersion">
-                  <mat-option value="S3-v1">S3-v1</mat-option>
-                  <mat-option value="S3-v2">S3-v2</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="col-sm-3" *ngIf="!ingestionSourceTable">
-            <div formGroupName="configBasicSetting">
-              <mat-form-field appearance="outline" class="container">
-                <mat-label>Object Name</mat-label>
-                <mat-select formControlName="objectName">
-                  <mat-option value="S3-v1">S3-v1</mat-option>
-                  <mat-option value="S3-v2">S3-v2</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-
-        <div class="row div-padding">
-          <div class="col-sm-3">
-            <div formGroupName="configBasicSetting">
-              <mat-form-field appearance="outline" class="container">
-                <mat-label>Content Type</mat-label>
-                <mat-select formControlName="contentType">
-                  <mat-option value="Json">Json</mat-option>
-                  <mat-option value="Xml">Xml</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-
-        <div class="row div-padding">
-          <div class="col-sm-3">
-            <div formGroupName="configBasicSetting">
-
-              <mat-form-field class="container" appearance="outline">
-                <input matInput [matDatepicker]="picker1" formControlName="effectiveDate" placeholder="Effective Date" class="mat-label-text">
-                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                <mat-datepicker #picker1 color="primary"></mat-datepicker>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div formGroupName="configBasicSetting">
-              <mat-form-field class="container" appearance="outline">
-                <input matInput [matDatepicker]="picker2" formControlName="exipirationDate" placeholder="Exipiration Date" class="mat-label-text">
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2 color="primary"></mat-datepicker>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="label-header-div">Creation Date</div>
-            <div class="label-content-div">01/01/2020</div>
-          </div>
-        </div>
-
-        <div class="row div-padding">
-          <div class="col-sm-3">
-            <div formGroupName="configBasicSetting">
-              <mat-form-field appearance="outline" class="container">
-                <mat-label>Configuration Status</mat-label>
-                <mat-select formControlName="configurationStatus">
-                  <mat-option value="Active">Active</mat-option>
-                  <mat-option value="Deactivate">Deactivate</mat-option>
-
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-
       </div>
+      <div class="row div-padding">
+        <div class="col-sm-3">
+
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Ingestion Source</mat-label>
+              <mat-select formControlName="ingestionSource" (selectionChange)="ingestionSourceChange($event.value)">
+                <mat-option value="Table">Table</mat-option>
+                <mat-option value="File">File</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <div class="col-sm-3" *ngIf="ingestionSourceTable">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Database/Schema</mat-label>
+              <mat-select formControlName="retainedVersion">
+                <mat-option value="S3-v1">S3-v1</mat-option>
+                <mat-option value="S3-v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="ingestionSourceTable">
+          <div formGroupName="configurationOption">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Table Name</mat-label>
+              <mat-select formControlName="retainedVersion">
+                <mat-option value="S3-v1">S3-v1</mat-option>
+                <mat-option value="S3-v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-3" *ngIf="!ingestionSourceTable">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Object Name</mat-label>
+              <mat-select formControlName="objectName">
+                <mat-option value="S3-v1">S3-v1</mat-option>
+                <mat-option value="S3-v2">S3-v2</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row div-padding">
+        <div class="col-sm-3">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Content Type</mat-label>
+              <mat-select formControlName="contentType">
+                <mat-option value="Json">Json</mat-option>
+                <mat-option value="Xml">Xml</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="row div-padding">
+        <div class="col-sm-3">
+          <div formGroupName="configBasicSetting">
+
+            <mat-form-field class="container" appearance="outline">
+              <input matInput [matDatepicker]="picker1" formControlName="effectiveDate" placeholder="Effective Date" class="mat-label-text">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field class="container" appearance="outline">
+              <input matInput [matDatepicker]="picker2" formControlName="exipirationDate" placeholder="Exipiration Date" class="mat-label-text">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="label-header-div">Creation Date</div>
+          <div class="label-content-div">01/01/2020</div>
+        </div>
+      </div>
+
+      <div class="row div-padding">
+        <div class="col-sm-3">
+          <div formGroupName="configBasicSetting">
+            <mat-form-field appearance="outline" class="container">
+              <mat-label>Configuration Status</mat-label>
+              <mat-select formControlName="configurationStatus">
+                <mat-option value="Active">Active</mat-option>
+                <mat-option value="Deactivate">Deactivate</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <!--Configuration Options-->
     <div class="row bolder-div-padding">
@@ -217,7 +218,7 @@
             </mat-form-field>
           </div>
         </div>
-        
+
       </div>
       <div class="row">
         <div class="col-sm-6" *ngIf="!ingestDisplay">
@@ -492,5 +493,5 @@
     </div>
   </form>
   <br />
-   <!--{{this.configeditForm.value | json}}--> 
+  <!--{{this.configeditForm.value | json}}-->
 </div>

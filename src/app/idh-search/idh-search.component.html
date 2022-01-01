@@ -1,73 +1,76 @@
-<breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"  ></breadcrumb-menu>
- 
-    <div class="row">
-      <div class="col-sm-6">
-        <mat-form-field appearance="outline" class="container">
-          <mat-label class="mat-label-text">Area</mat-label>
-          <mat-select [(ngModel)]="selectedArea">
-            <mat-option *ngFor="let area of areadata" [value]="area.areaId">
-              {{area.subjectAreaName}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-sm-6">
-        <mat-form-field appearance="outline" class="container">
-          <mat-label class="mat-label-text">SubArea</mat-label>
-          <mat-select [(ngModel)]="selectedSubArea">
-            <mat-option *ngFor="let subarea of idhserach" [value]="subarea.value">
-              {{subarea.text}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+<breadcrumb-menu [getCurrentBreadcrumbMenu]="setBreadcrumbMenuatext"></breadcrumb-menu>
+<div>
+  Find specific configuration or create a  <a mat-button routerLink="." class="new-config-link" appearance="outline">NEW CONFIGURATION</a>
+</div>
+<hr />
+<div class="row">
+  <div class="col-sm-6">
+    <mat-form-field appearance="outline" class="container">
+      <mat-label class="mat-label-text">Area</mat-label>
+      <mat-select [(ngModel)]="selectedArea">
+        <mat-option *ngFor="let area of areadata" [value]="area.areaId">
+          {{area.subjectAreaName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-sm-6">
+    <mat-form-field appearance="outline" class="container">
+      <mat-label class="mat-label-text">SubArea</mat-label>
+      <mat-select [(ngModel)]="selectedSubArea">
+        <mat-option *ngFor="let subarea of idhserach" [value]="subarea.value">
+          {{subarea.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <mat-form-field appearance="outline" class="container">
-          <mat-label class="mat-label-text">System Code</mat-label>
-          <mat-select [(ngModel)]="selectedSystemCode">
-            <mat-option *ngFor="let systemCode of idhserach" [value]="systemCode.value">
-              {{systemCode.text}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-sm-6">
-        <mat-form-field appearance="outline" class="container">
-          <mat-label class="mat-label-text">Object Code</mat-label>
-          <mat-select [(ngModel)]="selectedObjectCode">
-            <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
-              {{idhsearch.text}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <mat-form-field appearance="outline" class="container">
+      <mat-label class="mat-label-text">System Code</mat-label>
+      <mat-select [(ngModel)]="selectedSystemCode">
+        <mat-option *ngFor="let systemCode of idhserach" [value]="systemCode.value">
+          {{systemCode.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-sm-6">
+    <mat-form-field appearance="outline" class="container">
+      <mat-label class="mat-label-text">Object Code</mat-label>
+      <mat-select [(ngModel)]="selectedObjectCode">
+        <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
+          {{idhsearch.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <mat-form-field  appearance="outline" class="container">
-          <mat-label class="mat-label-text">Resource Name</mat-label>
-          <mat-select [(ngModel)]="selectedResourceName">
-            <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
-              {{idhsearch.text}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="col-sm-6">
-        <mat-form-field class="container" appearance="outline">
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <mat-form-field appearance="outline" class="container">
+      <mat-label class="mat-label-text">Resource Name</mat-label>
+      <mat-select [(ngModel)]="selectedResourceName">
+        <mat-option *ngFor="let idhsearch of idhserach" [value]="idhsearch.value">
+          {{idhsearch.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="col-sm-6">
+    <mat-form-field class="container" appearance="outline">
 
-          <input matInput placeholder="Last Updated By" class="mat-label-text" value="">
-          <mat-hint class="mat-hint-text">User IA or CN number</mat-hint>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row search-padding">
-      <div class="col-sm-1">  <button mat-raised-button color="primary" class="btn-search" (click)="searchConfig()">SEARCH</button></div>
-      <div class="col-sm-1">   <button mat-button color="primary" class="btn-clear" (click)="clearConfig()" >CLEAR</button></div>
+      <input matInput placeholder="Last Updated By" class="mat-label-text" value="">
+      <mat-hint class="mat-hint-text">User IA or CN number</mat-hint>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row search-padding">
+  <div class="col-sm-1">  <button mat-raised-button color="primary" class="btn-search" (click)="searchConfig()">SEARCH</button></div>
+  <div class="col-sm-1">   <button mat-button color="primary" class="btn-clear" (click)="clearConfig()">CLEAR</button></div>
 
-    </div>
-   
+</div>
+
