@@ -117,7 +117,9 @@ body {
 .breadcrumb-item:last-child::before {
   display: none !important;
 }
-
+.find-specific{
+    padding-left:20px!important;
+}
 .mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate {
   background: #05a7e9 !important;
   

@@ -3,7 +3,7 @@
     <div class="col-sm-6">
       <nav aria-label="breadcrumb">
         <div class="breadcrumb">
-          <div class="breadcrumb-item" *ngFor="let breadmenu of breadcrumbMenuList ">
+          <div [ngClass]="{'breadcrumb-item': breadmenu.isDisplay}" *ngFor="let breadmenu of breadcrumbMenuList ">
             <a *ngIf="breadmenu.isDisplay" [ngClass]="{'active-breadmenu': breadmenu.routerText != selectedrouterText, 'in-active-breadmenu' : breadmenu.routerText === selectedrouterText }"
                (click)="getSelectedMenu(breadmenu.routerText,breadmenu.routerLink)">{{breadmenu.routerText}}</a>
           </div>

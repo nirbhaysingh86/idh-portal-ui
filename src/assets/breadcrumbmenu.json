@@ -7,15 +7,15 @@
   {
     "routerText": "Results",
     "routerLink": "/configresult",
-    "isDisplay": true
+    "isDisplay": false
   },
   {
-    "routerText": "Detail",
+    "routerText": "Details",
     "routerLink": "/configdetail",
     "isDisplay": false
   },
   {
-    "routerText": "Edit",
+    "routerText": "Details",
     "routerLink": "/configedit",
     "isDisplay": false
   }
