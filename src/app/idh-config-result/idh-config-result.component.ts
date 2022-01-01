@@ -239,7 +239,6 @@ export class IdhConfigResult {
   }
   /**  Get the each cell tool tips */
   getTooltip(column: any, row: any) {
-    //return column + ' - ' + row[column];
     return row[column];
   }
   /** Remove the filter chip list */

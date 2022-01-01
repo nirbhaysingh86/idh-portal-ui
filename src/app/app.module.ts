@@ -45,7 +45,6 @@ import { BreadcrumbMmenuComponent } from './shared/breadcrumb-menu/breadcrumb-me
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-   //InMemoryWebApiModule.forRoot(ReconciliationInMemDataService),
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeIdhComponent },

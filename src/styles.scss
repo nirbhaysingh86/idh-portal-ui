@@ -117,3 +117,7 @@ body {
   display: none !important;
 }
 
+.mat-primary .mat-pseudo-checkbox-checked, .mat-primary .mat-pseudo-checkbox-indeterminate {
+  background: #05a7e9 !important;
+  
+}

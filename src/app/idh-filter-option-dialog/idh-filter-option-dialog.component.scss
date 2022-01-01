@@ -12,5 +12,18 @@
   display: none;
 }
 .widthcontainer{
-    width:25vw!important;
+    width:23vw!important;
+}
+ 
+.mat-select-arrow-wrapper {
+  width: 0;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 0px solid;
+  margin: 0 4px;
+}
+
+.mat-select-arrow {
+  border-top: 5px solid rgb(10, 73, 99);
 }
